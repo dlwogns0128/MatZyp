@@ -9,20 +9,32 @@
 import Foundation
 import UIKit
 
-class Matzyp
-{
-    var name:[Int:String]
-    var region:[Int:String]
-    var img:UIImage
-    var info:Info
+class Matzyp {
+    var name_ : [Int : String]
+    var number_ : String
+    var location_ : String
+    var homepage_ : String? = nil
+    var business_hour_ : String
+    //var img_ : UIImage
+    //var menu_ : Menu //Menu class
+    var rate_ : Float = 0.0
     
-    init(name:[Int:String],region:[Int:String],img:UIImage, info:Info) {
-        self.name = name
-        self.region = region
-        self.img = img
+    init(name : [Int : String], number : String, location : String, homepage : String,
+        business_hour : String /*img : UIImage, menu : Menu*/) {
+        name_ = name
+        number_ = number
+        location_ = location
+        homepage_ = homepage
+        business_hour_ = business_hour
+        //img_ = img
+        //menu_ = menu
         
-        let nInfo = Info(typeOfFood: info.typeOfFood,homepage: info.homepage,businessHour: info.businessHour,imgs: info.imgs,menu: info.menu)
-        self.info = nInfo
+    }
+    
+    /* Calculate current rate
+        @param[in] grade input grade */
+    func GetRate(grade : Float) {
+        rate_ = (rate_ + grade) / 2
     }
     
     func setLang (lang:Int)
@@ -31,24 +43,6 @@ class Matzyp
     }
 }
 
-class Info
-{
-    var typeOfFood:[Int:String]
-    var homepage:URL
-    var businessHour:String
-    var imgs:[UIImage]
-    var menu:[Int:[String:Int]]
-    
-    init(typeOfFood:[Int:String],homepage:URL,businessHour:String,imgs:[UIImage],menu:[Int:[String:Int]]) {
-        self.typeOfFood = typeOfFood
-        self.homepage = homepage
-        self.businessHour = businessHour
-        self.imgs = imgs
-        self.menu = menu
-    }
-}
+class Menu{}
+class Location{}
 
-class seting
-{
-    var lang:Int
-}
