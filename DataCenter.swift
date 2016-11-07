@@ -46,3 +46,11 @@ class Matzyp {
 class Menu{}
 class Location{}
 
+var matzypList:[Matzyp] = []
+
+let hanyangchone = Matzyp(name: [0 : "한양촌", 1 : "Hanyangchone", 2 : "중국어"],
+                          number: "010-3268-3267", location: "성동구 사근동",
+                          homepage: "www.hanyangchone.co.kr",
+                          business_hour: "09:00 ~ 18:00")
+let alchone = Matzyp(name:[0:"알촌", 1:"Alchone", 2:"중국어"], number: "02-1234-5678", location:"서울시 성동구 행당동", homepage:"www.alchone.com", business_hour:"09:00 ~ 20:00")
+

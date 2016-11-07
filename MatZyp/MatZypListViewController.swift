@@ -10,15 +10,15 @@ import UIKit
 
 class MatZypListViewController: UITableViewController {
     
+    //
     
-    var hanyangchone = Matzyp(name: [0 : "한양촌", 1 : "Hanyangchone", 2 : "짱깨"],
-                              number: "010-3268-3267", location: "성동구 사근동",
-                              homepage: "www.hanyangchone.co.kr",
-                              business_hour: "09:00 ~ 18:00")
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        matzypList.append(hanyangchone)
+        matzypList.append(alchone)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -40,20 +40,28 @@ class MatZypListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        //return 2
+        return matzypList.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
-
-        cell.textLabel!.text = Array(hanyangchone.name_.values)[indexPath.row]
+        
+        cell.textLabel!.text = matzypList[indexPath.row].name_[0]
+        //cell.textLabel!.text = Array(hanyangchone.name_.values)[indexPath.row]
         
 
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "성동구"
+    }
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        let rowCount = matzypList.count
+        return "\(rowCount)개의 맛집"
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
