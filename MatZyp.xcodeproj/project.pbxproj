@@ -12,6 +12,8 @@
 		36CE297A1DC869040087F8F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36CE29791DC869040087F8F3 /* Assets.xcassets */; };
 		36CE297D1DC869040087F8F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36CE297B1DC869040087F8F3 /* LaunchScreen.storyboard */; };
 		36CE29851DC869140087F8F3 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE29841DC869140087F8F3 /* DataCenter.swift */; };
+		36D159B31DD0DE47007B4EAA /* LocationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D159B21DD0DE47007B4EAA /* LocationListViewController.swift */; };
+		36D159B51DD0DE5B007B4EAA /* MenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D159B41DD0DE5B007B4EAA /* MenuListViewController.swift */; };
 		B2AEF5B91DCF21BA009A0476 /* MatZypListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEF5B81DCF21BA009A0476 /* MatZypListViewController.swift */; };
 		B2AEF5BB1DCF2296009A0476 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEF5BA1DCF2296009A0476 /* ViewController.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,8 @@
 		36CE297C1DC869040087F8F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36CE297E1DC869040087F8F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36CE29841DC869140087F8F3 /* DataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataCenter.swift; path = ../DataCenter.swift; sourceTree = "<group>"; };
+		36D159B21DD0DE47007B4EAA /* LocationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
+		36D159B41DD0DE5B007B4EAA /* MenuListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListViewController.swift; sourceTree = "<group>"; };
 		B2AEF5B81DCF21BA009A0476 /* MatZypListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatZypListViewController.swift; sourceTree = "<group>"; };
 		B2AEF5BA1DCF2296009A0476 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +63,8 @@
 			isa = PBXGroup;
 			children = (
 				36CE29841DC869140087F8F3 /* DataCenter.swift */,
+				36D159B21DD0DE47007B4EAA /* LocationListViewController.swift */,
+				36D159B41DD0DE5B007B4EAA /* MenuListViewController.swift */,
 				B2AEF5BA1DCF2296009A0476 /* ViewController.swift */,
 				36CE29721DC869040087F8F3 /* AppDelegate.swift */,
 				36CE29761DC869040087F8F3 /* Main.storyboard */,
@@ -144,6 +150,8 @@
 			files = (
 				B2AEF5B91DCF21BA009A0476 /* MatZypListViewController.swift in Sources */,
 				36CE29851DC869140087F8F3 /* DataCenter.swift in Sources */,
+				36D159B31DD0DE47007B4EAA /* LocationListViewController.swift in Sources */,
+				36D159B51DD0DE5B007B4EAA /* MenuListViewController.swift in Sources */,
 				B2AEF5BB1DCF2296009A0476 /* ViewController.swift in Sources */,
 				36CE29731DC869040087F8F3 /* AppDelegate.swift in Sources */,
 			);
