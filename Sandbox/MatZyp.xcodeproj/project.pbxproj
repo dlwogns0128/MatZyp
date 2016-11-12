@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		369A7E7C1DD5ACE3009FCB39 /* LanguageModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369A7E7B1DD5ACE3009FCB39 /* LanguageModalViewController.swift */; };
 		36CE29731DC869040087F8F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE29721DC869040087F8F3 /* AppDelegate.swift */; };
 		36CE29781DC869040087F8F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36CE29761DC869040087F8F3 /* Main.storyboard */; };
 		36CE297A1DC869040087F8F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36CE29791DC869040087F8F3 /* Assets.xcassets */; };
 		36CE297D1DC869040087F8F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36CE297B1DC869040087F8F3 /* LaunchScreen.storyboard */; };
 		36CE29851DC869140087F8F3 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE29841DC869140087F8F3 /* DataCenter.swift */; };
+		36CE63EE1DD6F06000F73C7E /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE63ED1DD6F06000F73C7E /* SettingController.swift */; };
 		36D159B31DD0DE47007B4EAA /* LocationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D159B21DD0DE47007B4EAA /* LocationListViewController.swift */; };
 		36D159B51DD0DE5B007B4EAA /* MenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D159B41DD0DE5B007B4EAA /* MenuListViewController.swift */; };
 		B2AEF5B91DCF21BA009A0476 /* MatZypListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEF5B81DCF21BA009A0476 /* MatZypListViewController.swift */; };
@@ -19,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		369A7E7B1DD5ACE3009FCB39 /* LanguageModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageModalViewController.swift; sourceTree = "<group>"; };
 		36CE296F1DC869040087F8F3 /* MatZyp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatZyp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36CE29721DC869040087F8F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36CE29771DC869040087F8F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		36CE297C1DC869040087F8F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36CE297E1DC869040087F8F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36CE29841DC869140087F8F3 /* DataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataCenter.swift; path = ../DataCenter.swift; sourceTree = "<group>"; };
+		36CE63ED1DD6F06000F73C7E /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		36D159B21DD0DE47007B4EAA /* LocationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
 		36D159B41DD0DE5B007B4EAA /* MenuListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListViewController.swift; sourceTree = "<group>"; };
 		B2AEF5B81DCF21BA009A0476 /* MatZypListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatZypListViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				36CE29791DC869040087F8F3 /* Assets.xcassets */,
 				36CE297B1DC869040087F8F3 /* LaunchScreen.storyboard */,
 				36CE297E1DC869040087F8F3 /* Info.plist */,
+				369A7E7B1DD5ACE3009FCB39 /* LanguageModalViewController.swift */,
+				36CE63ED1DD6F06000F73C7E /* SettingController.swift */,
 			);
 			path = MatZyp;
 			sourceTree = "<group>";
@@ -152,6 +158,8 @@
 				36CE29851DC869140087F8F3 /* DataCenter.swift in Sources */,
 				36D159B31DD0DE47007B4EAA /* LocationListViewController.swift in Sources */,
 				36D159B51DD0DE5B007B4EAA /* MenuListViewController.swift in Sources */,
+				36CE63EE1DD6F06000F73C7E /* SettingController.swift in Sources */,
+				369A7E7C1DD5ACE3009FCB39 /* LanguageModalViewController.swift in Sources */,
 				B2AEF5BB1DCF2296009A0476 /* ViewController.swift in Sources */,
 				36CE29731DC869040087F8F3 /* AppDelegate.swift in Sources */,
 			);

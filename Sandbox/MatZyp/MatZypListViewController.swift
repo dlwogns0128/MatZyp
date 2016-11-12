@@ -12,6 +12,7 @@ class MatZypListViewController: UITableViewController {
     
     
     var location:Location?
+    var setting:Setting?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,7 @@ class MatZypListViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.title = location?.name[0]
+        self.title = location?.name[(setting?.getLanguage())!]
         //self.navigationItem.title = "\(location!.name[0]) 정보"
         //타이틀은 네비게이션 아이템의 타이틀이 없을 경우 뷰 컨트롤러의 타이틀을 자동으로 사용
         
@@ -55,13 +56,13 @@ class MatZypListViewController: UITableViewController {
         guard let matzyp = location?.matzyps?[indexPath.row] else{
             return cell
         }
-        cell.textLabel?.text = matzyp.name[0]
+        cell.textLabel?.text = matzyp.name[(setting?.getLanguage())!]
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return location?.name[0]
+        return location?.name[(setting?.getLanguage())!]
     }
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         guard let rowCount = location?.matzyps?.count else{
@@ -115,6 +116,7 @@ class MatZypListViewController: UITableViewController {
             return
         }
         destination.matzyp = matzyp
+        destination.setting = setting
         /*
         if segue.identifier == "MenuSegue" {
             if let destination = segue.destination as? MenuListViewController {

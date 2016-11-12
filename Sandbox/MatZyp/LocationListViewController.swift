@@ -18,8 +18,21 @@ class LocationListViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+       
+        
     }
-
+/*
+     bottom tool bar
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        self.navigationController?.setToolbarHidden(false, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated);
+        self.navigationController?.setToolbarHidden(true, animated: animated)
+    }
+  */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,7 +56,9 @@ class LocationListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath)
 
         let location = dataCenter.locations[indexPath.row]
-        cell.textLabel?.text = location.name[0]
+        //get language
+        let lang = dataCenter.setting.getLanguage()
+        cell.textLabel?.text = location.name[lang]
 
         return cell
     }
@@ -76,6 +91,15 @@ class LocationListViewController: UITableViewController {
     }
     */
 
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated);
+//        self.navigationController?.setToolbarHidden(false, animated: animated)
+//   }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated);
+//        self.navigationController?.setToolbarHidden(true, animated: animated)
+//    }
     /*
     // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
@@ -83,8 +107,14 @@ class LocationListViewController: UITableViewController {
         return true
     }
     */
-
-    
+    @IBAction func unwindToLocationListView(segue: UIStoryboardSegue){
+        print("unwind")
+    }
+    func setLanguage (lang:Language){
+        //print("hihihihi")
+        dataCenter.setting.setLanguage(set_lang: lang)
+        self.tableView.reloadData()
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -93,8 +123,16 @@ class LocationListViewController: UITableViewController {
             if let destination = segue.destination as? MatZypListViewController{
                 if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
                     destination.location = dataCenter.locations[selectedIndex] as Location
+                    destination.setting = dataCenter.setting as Setting
                 }
             }
+        }
+        if segue.identifier == "LanguageSegue" {
+            if let destination = segue.destination as? LanguageModalViewController{
+                    destination.language = dataCenter.setting.lang as Language
+                    //destination.setting = dataCenter.setting as Setting
+            }
+            
         }
     }
     

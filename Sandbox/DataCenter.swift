@@ -9,16 +9,38 @@
 import Foundation
 import UIKit
 
+enum Language{
+    case korean
+    case chinese
+    case english
+}
+
+class Setting{
+    var lang:Language
+    
+    init(lang:Language) {
+        self.lang = lang
+    }
+    
+    func setLanguage(set_lang:Language){
+        lang = set_lang
+    }
+    
+    func getLanguage() -> Language {
+        return lang
+    }
+}
+
 class Location{
-    var name: [Int:String]
+    var name: [Language:String]
     var matzyps :[Matzyp]?
     
-    init (name:[Int:String]) {
+    init (name:[Language:String]) {
         self.name = name
     }
 }
 class Matzyp {
-    var name : [Int : String]
+    var name : [Language : String]
     var number : String
     //var location_ : String
     var homepage : String? = nil
@@ -27,13 +49,13 @@ class Matzyp {
     var menus : [Menu]? //Menu class
     var rate : Float = 0.0
     
-    init(name:[Int:String]) {
+    init(name:[Language:String]) {
         self.name = name
         self.number = ""
         self.business_hour = ""
     }
     
-    init(name : [Int : String], number : String, /*location : String,*/ homepage : String,
+    init(name : [Language : String], number : String, /*location : String,*/ homepage : String,
         business_hour : String /*img : UIImage, menu : Menu*/) {
         self.name = name
         self.number = number
@@ -58,34 +80,36 @@ class Matzyp {
 }
 
 class Menu{
-    var name :[Int:String]
+    var name :[Language:String]
     var price:Int
-    init(name:[Int:String], price:Int) {
+    init(name:[Language:String], price:Int) {
         self.name = name
         self.price = price
     }
 }
 
+
 let dataCenter:DataCenter = DataCenter()
 class DataCenter {
+    var setting:Setting
     var locations:[Location] = []
     init() {
-        let hanyangChone_menu1 = Menu(name: [0:"고추장불고기",1:"영어_고추장불고기",2:"중국어_고추장불고기"], price: 5500)
-        let hanyangChone_menu2 = Menu(name: [0:"순두부찌개",1:"영어",2:"중국어"], price: 5000)
-        let hanyangChone_menu3 = Menu(name: [0:"된장찌개",1:"영어",2:"중국어"], price: 5000)
-        let alchone_menu1 = Menu(name: [0:"알밥",1:"영어",2:"중국어"], price: 3800)
-        let alchone_menu2 = Menu(name: [0:"치즈알밥",1:"영어",2:"중국어"], price: 4500)
+        let hanyangChone_menu1 = Menu(name: [.korean:"고추장불고기",.english:"영_고추장불고기",.chinese:"중_고추장불고기"], price: 5500)
+        let hanyangChone_menu2 = Menu(name: [.korean:"순두부찌개",.english:"영_순두부찌개",.chinese:"중_순두부찌개"], price: 5000)
+        let hanyangChone_menu3 = Menu(name: [.korean:"된장찌개",.english:"영_된장찌개",.chinese:"중_된장찌개"], price: 5000)
+        let alchone_menu1 = Menu(name: [.korean:"알밥",.english:"영_알밥",.chinese:"중_알밥"], price: 3800)
+        let alchone_menu2 = Menu(name: [.korean:"치즈알밥",.english:"영_치즈알밥",.chinese:"중_치즈알밥"], price: 4500)
         
-        let hanyangChone = Matzyp(name: [0:"한양촌",1:"영어",2:"중국어"])
-        let alchone = Matzyp(name: [0:"알촌",1:"영어",2:"중국어"])
+        let hanyangChone = Matzyp(name: [.korean:"한양촌",.english:"영_한양촌",.chinese:"중_한양촌"])
+        let alchone = Matzyp(name: [.korean:"알촌",.english:"영_알촌",.chinese:"중_알촌"])
         
         hanyangChone.menus = [hanyangChone_menu1,hanyangChone_menu2,hanyangChone_menu3]
         alchone.menus = [alchone_menu1,alchone_menu2]
         
-        let location1 = Location(name: [0:"왕십리",1:"영어",2:"중국어"])
-        let location2 = Location(name: [0:"홍대",1:"영어",2:"중국어"])
-        let location3 = Location(name: [0:"노원구",1:"영어",2:"중국어"])
-        let location4 = Location(name: [0:"건대",1:"영어",2:"중국어"])
+        let location1 = Location(name: [.korean:"왕십리",.english:"영_왕십리",.chinese:"중_왕십리"])
+        let location2 = Location(name: [.korean:"홍대",.english:"영_홍대",.chinese:"중_홍대"])
+        let location3 = Location(name: [.korean:"노원구",.english:"영_노원구",.chinese:"중_노원구"])
+        let location4 = Location(name: [.korean:"건대",.english:"영_건대",.chinese:"중_건대"])
         
         location1.matzyps = [hanyangChone, alchone]
         location2.matzyps = [hanyangChone, alchone]
@@ -93,6 +117,10 @@ class DataCenter {
         location4.matzyps = [hanyangChone, alchone]
         
         locations += [location1, location2, location3, location4]
+        
+        let set = Setting(lang: .korean)
+        setting = set
+        
     }
 }
 /*
