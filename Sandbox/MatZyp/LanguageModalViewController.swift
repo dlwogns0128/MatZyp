@@ -1,27 +1,44 @@
 //
-//  MenuListViewController.swift
+//  LanguageModalViewController.swift
 //  MatZyp
 //
-//  Created by hyu on 2016. 11. 8..
+//  Created by hyu on 2016. 11. 11..
 //  Copyright © 2016년 CodersHigh. All rights reserved.
 //
 
 import UIKit
 
-class MenuListViewController: UITableViewController {
+class LanguageModalViewController: UITableViewController {
 
-    var matzyp:Matzyp?
-    var setting:Setting?
+    //var setting : Setting?
+    var language : Language?
+    
+    @IBOutlet weak var check1: UISwitch!
+    @IBOutlet weak var check2: UISwitch!
+    @IBOutlet weak var check3: UISwitch!
+    var checkGroup:[Language : UISwitch] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        check1.isOn = false
+        check2.isOn = false
+        check3.isOn = false
 
+        checkGroup = [.korean:check1, .english:check2, .chinese:check3]
+        //checkGroup[.korean] = check1
+        //checkGroup[.english] = check2
+        //checkGroup[.chinese] = check3
+        checkGroup[language!]?.isOn = true
+        
+        
+        
+        //checkGroup[.korean]?.isOn = true
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.title = matzyp?.name[(setting?.lang)!]
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,33 +47,56 @@ class MenuListViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    /*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        guard let rowCount = matzyp?.menus?.count else{
-            return 0
+        return 0
+    }
+    */
+    @IBAction func changeCheck1(_ sender: UISwitch) {
+        if (sender.isOn == true){
+            //sender.isOn = true
+            check2.isOn = false
+            check3.isOn = false
+            language = .korean
         }
-        return rowCount
+    }
+    @IBAction func changeCheck2(_ sender: UISwitch) {
+        if (sender.isOn == true){
+            check1.isOn = false
+            check3.isOn = false
+            language = .english
+        }
+    }
+
+    @IBAction func changeCheck3(_ sender: UISwitch) {
+        if (sender.isOn == true){
+            check1.isOn = false
+            check2.isOn = false
+            language = .chinese
+        }
     }
     
-
-    
+    @IBAction func languageDone(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func noChange(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        guard let menu = matzyp?.menus?[indexPath.row] else{
-            return cell
-        }
-        cell.textLabel?.text = menu.name[(setting?.lang)!]
-        cell.detailTextLabel?.text = "\(menu.price)"
+        // Configure the cell...
+
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -95,13 +135,16 @@ class MenuListViewController: UITableViewController {
 
     
     // MARK: - Navigation
-    /*
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-
+        if segue.identifier == "LanguageUnwindSegue" {
+            guard let locationListViewC = segue.destination as? LocationListViewController else{
+                return
+            }
+            locationListViewC.setLanguage(lang: language!)
+        }
     }
-    */
+ 
 
 }

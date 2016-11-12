@@ -11,6 +11,7 @@ import UIKit
 class MenuListViewController: UITableViewController {
 
     var matzyp:Matzyp?
+    var setting:Setting?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,7 @@ class MenuListViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.title = matzyp?.name[0]
+        self.title = matzyp?.name[(setting?.lang)!]
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,7 +52,7 @@ class MenuListViewController: UITableViewController {
         guard let menu = matzyp?.menus?[indexPath.row] else{
             return cell
         }
-        cell.textLabel?.text = menu.name[0]
+        cell.textLabel?.text = menu.name[(setting?.lang)!]
         cell.detailTextLabel?.text = "\(menu.price)"
         return cell
     }
