@@ -45,7 +45,7 @@ class Matzyp {
     //var location_ : String
     var homepage : String? = nil
     var business_hour : String
-    //var img_ : UIImage
+    var img_ : UIImage?
     var menus : [Menu]? //Menu class
     var rate : Float = 0.0
     
@@ -79,12 +79,19 @@ class Matzyp {
     }
 }
 
-class Menu{
+class Menu {
     var name :[Language:String]
     var price:Int
-    init(name:[Language:String], price:Int) {
+    let img: UIImage?
+    init(name:[Language:String], price:Int, img: UIImage?) {
         self.name = name
         self.price = price
+        if let image = img {
+            self.img = image
+        } else {
+            self.img = nil
+        }
+        
     }
 }
 
@@ -94,11 +101,11 @@ class DataCenter {
     var setting:Setting
     var locations:[Location] = []
     init() {
-        let hanyangChone_menu1 = Menu(name: [.korean:"고추장불고기",.english:"영_고추장불고기",.chinese:"중_고추장불고기"], price: 5500)
-        let hanyangChone_menu2 = Menu(name: [.korean:"순두부찌개",.english:"영_순두부찌개",.chinese:"중_순두부찌개"], price: 5000)
-        let hanyangChone_menu3 = Menu(name: [.korean:"된장찌개",.english:"영_된장찌개",.chinese:"중_된장찌개"], price: 5000)
-        let alchone_menu1 = Menu(name: [.korean:"알밥",.english:"영_알밥",.chinese:"중_알밥"], price: 3800)
-        let alchone_menu2 = Menu(name: [.korean:"치즈알밥",.english:"영_치즈알밥",.chinese:"중_치즈알밥"], price: 4500)
+        let hanyangChone_menu1 = Menu(name: [.korean:"고추장불고기",.english:"영_고추장불고기",.chinese:"중_고추장불고기"], price: 5500, img: UIImage(named: "gochu"))
+        let hanyangChone_menu2 = Menu(name: [.korean:"순두부찌개",.english:"영_순두부찌개",.chinese:"중_순두부찌개"], price: 5000, img: UIImage(named: "soon"))
+        let hanyangChone_menu3 = Menu(name: [.korean:"된장찌개",.english:"영_된장찌개",.chinese:"중_된장찌개"], price: 5000, img: UIImage(named: "miso"))
+        let alchone_menu1 = Menu(name: [.korean:"알밥",.english:"영_알밥",.chinese:"중_알밥"], price: 3800, img: UIImage(named: "eggrice"))
+        let alchone_menu2 = Menu(name: [.korean:"치즈알밥",.english:"영_치즈알밥",.chinese:"중_치즈알밥"], price: 4500, img: UIImage(named: "cheggrice"))
         
         let hanyangChone = Matzyp(name: [.korean:"한양촌",.english:"영_한양촌",.chinese:"중_한양촌"])
         let alchone = Matzyp(name: [.korean:"알촌",.english:"영_알촌",.chinese:"중_알촌"])

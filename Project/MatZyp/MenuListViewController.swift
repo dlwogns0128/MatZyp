@@ -21,9 +21,9 @@ class MenuListViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.title = matzyp?.name[(setting?.lang)!]
+        //self.title = matzyp?.name[(setting?.lang)!]
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -47,13 +47,14 @@ class MenuListViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
 
         guard let menu = matzyp?.menus?[indexPath.row] else{
             return cell
         }
-        cell.textLabel?.text = menu.name[(setting?.lang)!]
-        cell.detailTextLabel?.text = "\(menu.price)"
+        cell.nameLabel?.text = menu.name[(setting?.lang)!]
+        cell.menuImageView.image = menu.img;
+        cell.priceLabel?.text = "\(menu.price)원"
         return cell
     }
     
