@@ -51,19 +51,21 @@ class MatZypListViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MatzypCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MatzypCell", for: indexPath) as! MatZypListTableViewCell
         
         guard let matzyp = location?.matzyps?[indexPath.row] else{
             return cell
         }
-        cell.textLabel?.text = matzyp.name[(setting?.getLanguage())!]
+        cell.MainImageView.image = matzyp.main_img
+        cell.NameLabel.text = matzyp.name[(setting?.getLanguage())!]
+        cell.TimeLabel.text = matzyp.business_hour
 
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    /*override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return location?.name[(setting?.getLanguage())!]
-    }
+    }*/
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         guard let rowCount = location?.matzyps?.count else{
             return "0개의 맛집"

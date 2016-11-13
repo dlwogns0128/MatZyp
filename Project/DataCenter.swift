@@ -45,6 +45,7 @@ class Matzyp {
     var location : String
     var homepage : String? = nil
     var business_hour : String
+    var main_img: UIImage? = nil
     var img : UIImage? = nil
     var menus : [Menu]?  = nil//Menu class
     var rate : Float = 0.0
@@ -58,16 +59,18 @@ class Matzyp {
     }
     
     init(name : [Language : String], number : String, location : String, homepage : String,
-        business_hour : String, img : UIImage?) {
+         business_hour : String, main_img: UIImage?,img : UIImage?) {
         self.name = name
         self.number = number
         self.location = location
         self.homepage = homepage
         self.business_hour = business_hour
         
-        if let image = img {
+        if let main_image = main_img, let image = img {
+            self.main_img = main_image
             self.img = image
         } else {
+            self.main_img = nil
             self.img = nil
         }
         //menu_ = menu
@@ -115,13 +118,20 @@ class DataCenter {
         let alchone_menu2 = Menu(name: [.korean:"치즈알밥",.english:"영_치즈알밥",.chinese:"중_치즈알밥"], price: 4500, img: UIImage(named: "cheggrice"))
         
         let hanyangChone = Matzyp(name: [.korean:"한양촌",.english:"영_한양촌",.chinese:"중_한양촌"])
-        hanyangChone.img = UIImage(named: "Hanyangchone")
+        hanyangChone.main_img = UIImage(named: "hanyangchone_main")
+        hanyangChone.img = UIImage(named: "hanyangchone_sub")
         hanyangChone.location = "서울시 성동구 사근동"
         hanyangChone.business_hour = "09:00 ~ 19:00"
         hanyangChone.number = "02 - 123 - 4567"
         hanyangChone.homepage = "www.abc.com"
         
         let alchone = Matzyp(name: [.korean:"알촌",.english:"영_알촌",.chinese:"중_알촌"])
+        alchone.main_img = UIImage(named: "alchone_main")
+        alchone.img = UIImage(named: "alchone_sub")
+        alchone.location = "서울시 성동구 행당동 19-112"
+        alchone.business_hour = "09:00 ~ 21:00"
+        alchone.number = "02 - 2292 - 8885"
+        alchone.homepage = "www.alchone.co.kr"
         
         hanyangChone.menus = [hanyangChone_menu1,hanyangChone_menu2,hanyangChone_menu3]
         alchone.menus = [alchone_menu1,alchone_menu2]

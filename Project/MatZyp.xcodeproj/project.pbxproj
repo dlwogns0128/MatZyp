@@ -16,6 +16,7 @@
 		36CE63EE1DD6F06000F73C7E /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE63ED1DD6F06000F73C7E /* SettingController.swift */; };
 		36D159B31DD0DE47007B4EAA /* LocationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D159B21DD0DE47007B4EAA /* LocationListViewController.swift */; };
 		36D159B51DD0DE5B007B4EAA /* MenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D159B41DD0DE5B007B4EAA /* MenuListViewController.swift */; };
+		B26395C81DD8A9F40046952F /* MatZypListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26395C71DD8A9F40046952F /* MatZypListTableViewCell.swift */; };
 		B268B6D31DD76A3A00737189 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268B6D21DD76A3A00737189 /* MenuCell.swift */; };
 		B2AEF5B91DCF21BA009A0476 /* MatZypListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEF5B81DCF21BA009A0476 /* MatZypListViewController.swift */; };
 		B2AEF5BB1DCF2296009A0476 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEF5BA1DCF2296009A0476 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 		36CE63ED1DD6F06000F73C7E /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		36D159B21DD0DE47007B4EAA /* LocationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
 		36D159B41DD0DE5B007B4EAA /* MenuListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListViewController.swift; sourceTree = "<group>"; };
+		B26395C71DD8A9F40046952F /* MatZypListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatZypListTableViewCell.swift; sourceTree = "<group>"; };
 		B268B6D21DD76A3A00737189 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		B2AEF5B81DCF21BA009A0476 /* MatZypListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatZypListViewController.swift; sourceTree = "<group>"; };
 		B2AEF5BA1DCF2296009A0476 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +90,7 @@
 				36CE29721DC869040087F8F3 /* AppDelegate.swift */,
 				36CE29761DC869040087F8F3 /* Main.storyboard */,
 				B2BA89A01DD86AF200FC0C13 /* MatZypView */,
-				B2AEF5B81DCF21BA009A0476 /* MatZypListViewController.swift */,
+				B26395C61DD8A9C90046952F /* MatZypListView */,
 				36CE29791DC869040087F8F3 /* Assets.xcassets */,
 				36CE297B1DC869040087F8F3 /* LaunchScreen.storyboard */,
 				36CE297E1DC869040087F8F3 /* Info.plist */,
@@ -96,6 +98,15 @@
 				36CE63ED1DD6F06000F73C7E /* SettingController.swift */,
 			);
 			path = MatZyp;
+			sourceTree = "<group>";
+		};
+		B26395C61DD8A9C90046952F /* MatZypListView */ = {
+			isa = PBXGroup;
+			children = (
+				B2AEF5B81DCF21BA009A0476 /* MatZypListViewController.swift */,
+				B26395C71DD8A9F40046952F /* MatZypListTableViewCell.swift */,
+			);
+			name = MatZypListView;
 			sourceTree = "<group>";
 		};
 		B2BA89A01DD86AF200FC0C13 /* MatZypView */ = {
@@ -202,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B26395C81DD8A9F40046952F /* MatZypListTableViewCell.swift in Sources */,
 				B2AEF5B91DCF21BA009A0476 /* MatZypListViewController.swift in Sources */,
 				36CE29851DC869140087F8F3 /* DataCenter.swift in Sources */,
 				B268B6D31DD76A3A00737189 /* MenuCell.swift in Sources */,
