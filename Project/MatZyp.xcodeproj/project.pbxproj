@@ -19,6 +19,13 @@
 		B268B6D31DD76A3A00737189 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268B6D21DD76A3A00737189 /* MenuCell.swift */; };
 		B2AEF5B91DCF21BA009A0476 /* MatZypListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEF5B81DCF21BA009A0476 /* MatZypListViewController.swift */; };
 		B2AEF5BB1DCF2296009A0476 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEF5BA1DCF2296009A0476 /* ViewController.swift */; };
+		B2BA89A41DD86B5500FC0C13 /* FirstCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA89A31DD86B5500FC0C13 /* FirstCell.swift */; };
+		B2BA89A61DD86B7000FC0C13 /* InfoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA89A51DD86B7000FC0C13 /* InfoListViewController.swift */; };
+		B2BA89A81DD881EB00FC0C13 /* SecondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA89A71DD881EB00FC0C13 /* SecondCell.swift */; };
+		B2BA89AA1DD883EC00FC0C13 /* ThirdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA89A91DD883EC00FC0C13 /* ThirdCell.swift */; };
+		B2BA89AC1DD883F800FC0C13 /* FourthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA89AB1DD883F800FC0C13 /* FourthCell.swift */; };
+		B2BA89AE1DD8840200FC0C13 /* FifthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA89AD1DD8840200FC0C13 /* FifthCell.swift */; };
+		B2BA89B01DD8840C00FC0C13 /* SixthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA89AF1DD8840C00FC0C13 /* SixthCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +43,13 @@
 		B268B6D21DD76A3A00737189 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		B2AEF5B81DCF21BA009A0476 /* MatZypListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatZypListViewController.swift; sourceTree = "<group>"; };
 		B2AEF5BA1DCF2296009A0476 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B2BA89A31DD86B5500FC0C13 /* FirstCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCell.swift; sourceTree = "<group>"; };
+		B2BA89A51DD86B7000FC0C13 /* InfoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoListViewController.swift; sourceTree = "<group>"; };
+		B2BA89A71DD881EB00FC0C13 /* SecondCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondCell.swift; sourceTree = "<group>"; };
+		B2BA89A91DD883EC00FC0C13 /* ThirdCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdCell.swift; sourceTree = "<group>"; };
+		B2BA89AB1DD883F800FC0C13 /* FourthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthCell.swift; sourceTree = "<group>"; };
+		B2BA89AD1DD8840200FC0C13 /* FifthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifthCell.swift; sourceTree = "<group>"; };
+		B2BA89AF1DD8840C00FC0C13 /* SixthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixthCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,11 +84,10 @@
 			children = (
 				36CE29841DC869140087F8F3 /* DataCenter.swift */,
 				36D159B21DD0DE47007B4EAA /* LocationListViewController.swift */,
-				36D159B41DD0DE5B007B4EAA /* MenuListViewController.swift */,
 				B2AEF5BA1DCF2296009A0476 /* ViewController.swift */,
 				36CE29721DC869040087F8F3 /* AppDelegate.swift */,
 				36CE29761DC869040087F8F3 /* Main.storyboard */,
-				B268B6D21DD76A3A00737189 /* MenuCell.swift */,
+				B2BA89A01DD86AF200FC0C13 /* MatZypView */,
 				B2AEF5B81DCF21BA009A0476 /* MatZypListViewController.swift */,
 				36CE29791DC869040087F8F3 /* Assets.xcassets */,
 				36CE297B1DC869040087F8F3 /* LaunchScreen.storyboard */,
@@ -83,6 +96,38 @@
 				36CE63ED1DD6F06000F73C7E /* SettingController.swift */,
 			);
 			path = MatZyp;
+			sourceTree = "<group>";
+		};
+		B2BA89A01DD86AF200FC0C13 /* MatZypView */ = {
+			isa = PBXGroup;
+			children = (
+				B2BA89A21DD86B2200FC0C13 /* MenuView */,
+				B2BA89A11DD86B1900FC0C13 /* InfoView */,
+			);
+			name = MatZypView;
+			sourceTree = "<group>";
+		};
+		B2BA89A11DD86B1900FC0C13 /* InfoView */ = {
+			isa = PBXGroup;
+			children = (
+				B2BA89A31DD86B5500FC0C13 /* FirstCell.swift */,
+				B2BA89A71DD881EB00FC0C13 /* SecondCell.swift */,
+				B2BA89A91DD883EC00FC0C13 /* ThirdCell.swift */,
+				B2BA89AB1DD883F800FC0C13 /* FourthCell.swift */,
+				B2BA89AD1DD8840200FC0C13 /* FifthCell.swift */,
+				B2BA89AF1DD8840C00FC0C13 /* SixthCell.swift */,
+				B2BA89A51DD86B7000FC0C13 /* InfoListViewController.swift */,
+			);
+			name = InfoView;
+			sourceTree = "<group>";
+		};
+		B2BA89A21DD86B2200FC0C13 /* MenuView */ = {
+			isa = PBXGroup;
+			children = (
+				36D159B41DD0DE5B007B4EAA /* MenuListViewController.swift */,
+				B268B6D21DD76A3A00737189 /* MenuCell.swift */,
+			);
+			name = MenuView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,9 +206,16 @@
 				36CE29851DC869140087F8F3 /* DataCenter.swift in Sources */,
 				B268B6D31DD76A3A00737189 /* MenuCell.swift in Sources */,
 				36D159B31DD0DE47007B4EAA /* LocationListViewController.swift in Sources */,
+				B2BA89A41DD86B5500FC0C13 /* FirstCell.swift in Sources */,
 				36D159B51DD0DE5B007B4EAA /* MenuListViewController.swift in Sources */,
 				36CE63EE1DD6F06000F73C7E /* SettingController.swift in Sources */,
+				B2BA89A81DD881EB00FC0C13 /* SecondCell.swift in Sources */,
+				B2BA89A61DD86B7000FC0C13 /* InfoListViewController.swift in Sources */,
+				B2BA89AA1DD883EC00FC0C13 /* ThirdCell.swift in Sources */,
+				B2BA89B01DD8840C00FC0C13 /* SixthCell.swift in Sources */,
 				369A7E7C1DD5ACE3009FCB39 /* LanguageModalViewController.swift in Sources */,
+				B2BA89AC1DD883F800FC0C13 /* FourthCell.swift in Sources */,
+				B2BA89AE1DD8840200FC0C13 /* FifthCell.swift in Sources */,
 				B2AEF5BB1DCF2296009A0476 /* ViewController.swift in Sources */,
 				36CE29731DC869040087F8F3 /* AppDelegate.swift in Sources */,
 			);

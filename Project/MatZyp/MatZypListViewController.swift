@@ -116,13 +116,13 @@ class MatZypListViewController: UITableViewController {
             return
         }
         
-        guard let /*info_tab = destination.viewControllers[0] as? InfoListViewController,*/
-            menu_tab = destination.viewControllers?[1] as? MenuListViewController else {
+        guard let info_tab = destination.viewControllers?[0] as? InfoListViewController,
+            let menu_tab = destination.viewControllers?[1] as? MenuListViewController else {
                 return
             }
     
-        /*info_tab.matzyp = matzyp
-        info_tab.setting = setting*/
+        info_tab.matzyp = matzyp
+        info_tab.setting = setting
         
         menu_tab.matzyp = matzyp
         menu_tab.setting = setting
