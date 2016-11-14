@@ -1,14 +1,14 @@
 //
-//  MenuListViewController.swift
+//  InfoListViewController.swift
 //  MatZyp
 //
-//  Created by hyu on 2016. 11. 8..
+//  Created by archane on 2016. 11. 13..
 //  Copyright © 2016년 CodersHigh. All rights reserved.
 //
 
 import UIKit
 
-class MenuListViewController: UITableViewController {
+class InfoListViewController: UITableViewController {
 
     var matzyp:Matzyp?
     var setting:Setting?
@@ -21,7 +21,6 @@ class MenuListViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        //self.title = matzyp?.name[(setting?.lang)!]
         self.navigationController?.isNavigationBarHidden = true
     }
     
@@ -38,7 +37,7 @@ class MenuListViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -48,24 +47,51 @@ class MenuListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        guard let rowCount = matzyp?.menus?.count else{
-            return 0
-        }
-        return rowCount
+        return 6
     }
-    
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
-
-        guard let menu = matzyp?.menus?[indexPath.row] else{
-            return cell
+        
+        switch(indexPath.row) {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "FirstCell", for: indexPath) as! FirstCell
+        
+                guard let image = matzyp?.img else{
+                    return cell
+                }
+                self.tableView.rowHeight = 220
+                cell.subImageView.image = image
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "SecondCell", for: indexPath) as! SecondCell
+                self.tableView.rowHeight = 55
+                cell.NameLabel.text = matzyp?.name[(setting?.getLanguage())!]
+                return cell
+            case 2:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ThirdCell", for: indexPath) as! ThirdCell
+                self.tableView.rowHeight = 40
+                cell.LocationLabel.text = matzyp?.location
+                return cell
+            case 3:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "FourthCell", for: indexPath) as! FourthCell
+                cell.TimeLabel.text = matzyp?.business_hour
+                return cell
+            case 4:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "FifthCell", for: indexPath) as! FifthCell
+                cell.PhoneLabel.text = matzyp?.number
+                return cell
+            case 5:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "SixthCell", for: indexPath) as! SixthCell
+                cell.HomeLabel.text = matzyp?.homepage
+                return cell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "SixthCell", for: indexPath) as! SixthCell
+                cell.HomeLabel.text = matzyp?.homepage
+                return cell
         }
-        cell.nameLabel?.text = menu.name[(setting?.lang)!]
-        cell.menuImageView.image = menu.img;
-        cell.priceLabel?.text = "\(menu.price)원"
-        return cell
+        // Configure the cell...
+
     }
     
 
@@ -104,14 +130,13 @@ class MenuListViewController: UITableViewController {
     }
     */
 
-    
-    // MARK: - Navigation
     /*
+    // MARK: - Navigation
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-
     }
     */
 
