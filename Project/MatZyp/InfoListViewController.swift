@@ -21,18 +21,25 @@ class InfoListViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.navigationController?.isNavigationBarHidden = true
+       // self.navigationController?.isNavigationBarHidden = true
+        
     }
-    
-    /* Hide navigation tab only when screen is top*/
-    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
-            self.navigationController?.isNavigationBarHidden = false
-        } else {
-            self.navigationController?.isNavigationBarHidden = true
+    override func viewDidLayoutSubviews() {
+        if let rect = self.navigationController?.navigationBar.frame {
+            let y = rect.size.height + rect.origin.y
+            self.tableView.contentInset = UIEdgeInsets(top: y,left: 0,bottom: 0,right: 0)
         }
     }
-    
+    /* Hide navigation tab only when screen is top*/
+    /*
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
+         //   self.navigationController?.isNavigationBarHidden = false
+        } else {
+        //    self.navigationController?.isNavigationBarHidden = true
+        }
+    }
+    */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
