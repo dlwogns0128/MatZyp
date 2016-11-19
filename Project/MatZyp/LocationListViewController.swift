@@ -52,6 +52,27 @@ class LocationListViewController: UITableViewController {
     }
 
     
+    @IBAction func locationTurnOn(_ sender: UIBarButtonItem) {
+        let locationAlert = UIAlertController(title: "위치 정보 요청", message: "지도앱에서 위치정보를 제공합니다.", preferredStyle: .actionSheet)
+        let locationAction = UIAlertAction(title: "위치 정보 켜기", style: .default, handler: {(action:UIAlertAction) -> Void in
+            
+            let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let vc : UINavigationController = storyboard.instantiateViewController(withIdentifier: "GMapViewController") as! UINavigationController
+            
+            self.present(vc, animated: true, completion: nil)
+            
+        })
+        let cancleAction = UIAlertAction(title: "위치 정보 끄기", style: .default, handler: {(action:UIAlertAction) -> Void in print("위치 정보 끄기")})
+        
+        locationAlert.addAction(locationAction)
+        locationAlert.addAction(cancleAction)
+        
+        self.present(locationAlert, animated: true, completion: nil)
+    }
+    
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath)
 
