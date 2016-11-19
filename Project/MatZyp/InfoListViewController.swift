@@ -20,9 +20,7 @@ class InfoListViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-       // self.navigationController?.isNavigationBarHidden = true
-        
+        self.tabBarController?.navigationItem.title = matzyp?.name[(setting?.getLanguage())!]
     }
     override func viewDidLayoutSubviews() {
         if let rect = self.navigationController?.navigationBar.frame {

@@ -1,14 +1,14 @@
 //
-//  MenuListViewController.swift
+//  ReviewTableViewController.swift
 //  MatZyp
 //
-//  Created by hyu on 2016. 11. 8..
+//  Created by archane on 2016. 11. 19..
 //  Copyright © 2016년 CodersHigh. All rights reserved.
 //
 
 import UIKit
 
-class MenuListViewController: UITableViewController {
+class ReviewTableViewController: UITableViewController {
 
     var matzyp:Matzyp?
     var setting:Setting?
@@ -21,9 +21,13 @@ class MenuListViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        //self.title = matzyp?.name[(setting?.lang)!]
-        //self.navigationController?.isNavigationBarHidden = false
         self.tabBarController?.navigationItem.title = matzyp?.name[(setting?.getLanguage())!]
+        self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Edit_"), style: .plain, target: nil, action: nil)
+        //self.tabBarController?.selectedViewController?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Edit_"), style: .plain, target: nil, action: nil)
+    }
+    
+    func writeButtonTapped(_rightBarButtonItem: UIBarButtonItem){
+        print("hello")
     }
     override func viewDidLayoutSubviews() {
         if let rect = self.navigationController?.navigationBar.frame {
@@ -31,50 +35,33 @@ class MenuListViewController: UITableViewController {
             self.tableView.contentInset = UIEdgeInsets(top: y,left: 0,bottom: 0,right: 0)
         }
     }
-    /* Hide navigation tab only when screen is top*/
-    /*
-    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
-           // self.navigationController?.isNavigationBarHidden = false
-        } else {
-           // self.navigationController?.isNavigationBarHidden = true
-        }
-    }
-    */
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        guard let rowCount = matzyp?.menus?.count else{
-            return 0
-        }
-        return rowCount
+        return 0
     }
-    
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        guard let menu = matzyp?.menus?[indexPath.row] else{
-            return cell
-        }
-        cell.nameLabel?.text = menu.name[(setting?.lang)!]
-        cell.menuImageView.image = menu.img;
-        cell.priceLabel?.text = "\(menu.price)원"
+        // Configure the cell...
+
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -111,14 +98,13 @@ class MenuListViewController: UITableViewController {
     }
     */
 
-    
-    // MARK: - Navigation
     /*
+    // MARK: - Navigation
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-
     }
     */
 
