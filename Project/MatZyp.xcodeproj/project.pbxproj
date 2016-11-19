@@ -16,6 +16,7 @@
 		36CE63EE1DD6F06000F73C7E /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE63ED1DD6F06000F73C7E /* SettingController.swift */; };
 		36D159B31DD0DE47007B4EAA /* LocationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D159B21DD0DE47007B4EAA /* LocationListViewController.swift */; };
 		36D159B51DD0DE5B007B4EAA /* MenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D159B41DD0DE5B007B4EAA /* MenuListViewController.swift */; };
+		B24318161DE02E2B005F9317 /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24318151DE02E2B005F9317 /* ReviewTableViewController.swift */; };
 		B26395C81DD8A9F40046952F /* MatZypListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26395C71DD8A9F40046952F /* MatZypListTableViewCell.swift */; };
 		B268B6D31DD76A3A00737189 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268B6D21DD76A3A00737189 /* MenuCell.swift */; };
 		B2AEF5B91DCF21BA009A0476 /* MatZypListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEF5B81DCF21BA009A0476 /* MatZypListViewController.swift */; };
@@ -27,6 +28,7 @@
 		B2BA89AC1DD883F800FC0C13 /* FourthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA89AB1DD883F800FC0C13 /* FourthCell.swift */; };
 		B2BA89AE1DD8840200FC0C13 /* FifthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA89AD1DD8840200FC0C13 /* FifthCell.swift */; };
 		B2BA89B01DD8840C00FC0C13 /* SixthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA89AF1DD8840C00FC0C13 /* SixthCell.swift */; };
+		B2DEBB2D1DDEE0710036CEB8 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DEBB2C1DDEE0710036CEB8 /* RatingControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,7 @@
 		36CE63ED1DD6F06000F73C7E /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		36D159B21DD0DE47007B4EAA /* LocationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
 		36D159B41DD0DE5B007B4EAA /* MenuListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListViewController.swift; sourceTree = "<group>"; };
+		B24318151DE02E2B005F9317 /* ReviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
 		B26395C71DD8A9F40046952F /* MatZypListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatZypListTableViewCell.swift; sourceTree = "<group>"; };
 		B268B6D21DD76A3A00737189 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		B2AEF5B81DCF21BA009A0476 /* MatZypListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatZypListViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		B2BA89AB1DD883F800FC0C13 /* FourthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthCell.swift; sourceTree = "<group>"; };
 		B2BA89AD1DD8840200FC0C13 /* FifthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifthCell.swift; sourceTree = "<group>"; };
 		B2BA89AF1DD8840C00FC0C13 /* SixthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixthCell.swift; sourceTree = "<group>"; };
+		B2DEBB2C1DDEE0710036CEB8 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,14 @@
 			path = MatZyp;
 			sourceTree = "<group>";
 		};
+		B24318141DE02E10005F9317 /* ReviewView */ = {
+			isa = PBXGroup;
+			children = (
+				B24318151DE02E2B005F9317 /* ReviewTableViewController.swift */,
+			);
+			name = ReviewView;
+			sourceTree = "<group>";
+		};
 		B26395C61DD8A9C90046952F /* MatZypListView */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +124,7 @@
 		B2BA89A01DD86AF200FC0C13 /* MatZypView */ = {
 			isa = PBXGroup;
 			children = (
+				B24318141DE02E10005F9317 /* ReviewView */,
 				B2BA89A21DD86B2200FC0C13 /* MenuView */,
 				B2BA89A11DD86B1900FC0C13 /* InfoView */,
 			);
@@ -128,6 +141,7 @@
 				B2BA89AD1DD8840200FC0C13 /* FifthCell.swift */,
 				B2BA89AF1DD8840C00FC0C13 /* SixthCell.swift */,
 				B2BA89A51DD86B7000FC0C13 /* InfoListViewController.swift */,
+				B2DEBB2C1DDEE0710036CEB8 /* RatingControl.swift */,
 			);
 			name = InfoView;
 			sourceTree = "<group>";
@@ -217,7 +231,9 @@
 				B2AEF5B91DCF21BA009A0476 /* MatZypListViewController.swift in Sources */,
 				36CE29851DC869140087F8F3 /* DataCenter.swift in Sources */,
 				B268B6D31DD76A3A00737189 /* MenuCell.swift in Sources */,
+				B2DEBB2D1DDEE0710036CEB8 /* RatingControl.swift in Sources */,
 				36D159B31DD0DE47007B4EAA /* LocationListViewController.swift in Sources */,
+				B24318161DE02E2B005F9317 /* ReviewTableViewController.swift in Sources */,
 				B2BA89A41DD86B5500FC0C13 /* FirstCell.swift in Sources */,
 				36D159B51DD0DE5B007B4EAA /* MenuListViewController.swift in Sources */,
 				36CE63EE1DD6F06000F73C7E /* SettingController.swift in Sources */,

@@ -38,27 +38,40 @@ class MatZypListViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         guard let rowCount = location?.matzyps?.count else{
             return 0
         }
         return rowCount
     }
 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 1
+    }
+    // Set the spacing between sections
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 7
+    }
+    
+    // Make the background color show through
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "MatzypCell", for: indexPath) as! MatZypListTableViewCell
         
-        guard let matzyp = location?.matzyps?[indexPath.row] else{
+        guard let matzyp = location?.matzyps?[indexPath.section] else{
             return cell
         }
         cell.MainImageView.image = matzyp.main_img
         cell.NameLabel.text = matzyp.name[(setting?.getLanguage())!]
         cell.TimeLabel.text = matzyp.business_hour
+        cell.layer.cornerRadius = 8
 
         return cell
     }
@@ -66,12 +79,17 @@ class MatZypListViewController: UITableViewController {
     /*override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return location?.name[(setting?.getLanguage())!]
     }*/
-    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        guard let rowCount = location?.matzyps?.count else{
-            return "0개의 맛집"
+    /*override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        
+        if section == location?.matzyps?.count {
+            guard let rowCount = location?.matzyps?.count else{
+                return "0개의 맛집"
+            }
+            return "\(rowCount)개의 맛집"
+        } else {
+            return nil
         }
-        return "\(rowCount)개의 맛집"
-    }
+    }*/
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -114,12 +132,13 @@ class MatZypListViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        guard let destination = segue.destination as? UITabBarController , let selectedIndex = self.tableView.indexPathForSelectedRow?.row, let matzyp = location?.matzyps?[selectedIndex] else{
+        guard let destination = segue.destination as? UITabBarController , let selectedIndex = self.tableView.indexPathForSelectedRow?.section, let matzyp = location?.matzyps?[selectedIndex] else{
             return
         }
         
         guard let info_tab = destination.viewControllers?[0] as? InfoListViewController,
-            let menu_tab = destination.viewControllers?[1] as? MenuListViewController else {
+            let menu_tab = destination.viewControllers?[1] as? MenuListViewController,
+            let review_tab = destination.viewControllers?[2] as? ReviewTableViewController else {
                 return
             }
     
@@ -128,6 +147,9 @@ class MatZypListViewController: UITableViewController {
         
         menu_tab.matzyp = matzyp
         menu_tab.setting = setting
+        
+        review_tab.matzyp = matzyp
+        review_tab.setting = setting
         
         /*
         if segue.identifier == "MenuSegue" {

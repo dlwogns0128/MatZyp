@@ -13,6 +13,7 @@ class MatZypListTableViewCell: UITableViewCell {
     @IBOutlet weak var MainImageView: UIImageView!
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var TimeLabel: UILabel!
+    @IBOutlet weak var ratingControl: RatingControl!
     
     override func awakeFromNib() {
         super.awakeFromNib()
