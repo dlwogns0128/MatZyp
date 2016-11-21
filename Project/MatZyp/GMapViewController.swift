@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class GMapViewController: UIViewController {
+class GMapViewController: UIViewController, GMSMapViewDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +23,45 @@ class GMapViewController: UIViewController {
         mapView.mapType = kGMSTypeNormal
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
+        mapView.delegate = self
         self.view = mapView
         
         let currentLocation = CLLocationCoordinate2DMake(37.558814, 127.040152)
         let marker = GMSMarker(position: currentLocation)
         marker.title = "알촌"
+        marker.userData = 1
         marker.map = mapView
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        
+        
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc : UITabBarController = storyboard.instantiateViewController(withIdentifier: "MatZypTabController") as! UITabBarController
+        
+        let selectedIndex:Int = marker.userData as! Int
+        let location = dataCenter.locations[selectedIndex] as Location
+        let setting = dataCenter.setting as Setting
+        let matzyp = location.matzyps?[selectedIndex]
+        
+        guard let info_tab = vc.viewControllers?[0] as? InfoListViewController,
+            let menu_tab = vc.viewControllers?[1] as? MenuListViewController,
+            let review_tab = vc.viewControllers?[2] as? ReviewTableViewController else {
+                return
+        }
+        
+        info_tab.matzyp = matzyp
+        info_tab.setting = setting
+        
+        menu_tab.matzyp = matzyp
+        menu_tab.setting = setting
+        
+        review_tab.matzyp = matzyp
+        review_tab.setting = setting
+        
+        self.present(vc, animated: true, completion: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
