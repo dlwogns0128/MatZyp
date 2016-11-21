@@ -18,9 +18,12 @@ class GMapViewController: UIViewController {
         
         
         GMSServices.provideAPIKey("AIzaSyCG-ZjlJaZK64zDyb2rGQ8eIgNs2DlhbPs")
-        let camera = GMSCameraPosition.camera(withLatitude: 37.558814, longitude: 127.040152, zoom: 10)
+        let camera = GMSCameraPosition.camera(withLatitude: 37.558814, longitude: 127.040152, zoom: 12)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        view = mapView
+        mapView.mapType = kGMSTypeNormal
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
+        self.view = mapView
         
         let currentLocation = CLLocationCoordinate2DMake(37.558814, 127.040152)
         let marker = GMSMarker(position: currentLocation)
