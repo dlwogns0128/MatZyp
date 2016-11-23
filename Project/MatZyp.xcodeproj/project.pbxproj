@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		027348FD0E372FE8E3C2CD99 /* libPods-MatZyp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0E8C36BE4828F6B76B5EAB /* libPods-MatZyp.a */; };
 		369A7E7C1DD5ACE3009FCB39 /* LanguageModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369A7E7B1DD5ACE3009FCB39 /* LanguageModalViewController.swift */; };
 		36CE29731DC869040087F8F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE29721DC869040087F8F3 /* AppDelegate.swift */; };
 		36CE29781DC869040087F8F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36CE29761DC869040087F8F3 /* Main.storyboard */; };
@@ -30,12 +29,9 @@
 		B2BA89AE1DD8840200FC0C13 /* FifthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA89AD1DD8840200FC0C13 /* FifthCell.swift */; };
 		B2BA89B01DD8840C00FC0C13 /* SixthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA89AF1DD8840C00FC0C13 /* SixthCell.swift */; };
 		B2DEBB2D1DDEE0710036CEB8 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DEBB2C1DDEE0710036CEB8 /* RatingControl.swift */; };
-		CE16A1171DE0663E00DED5E7 /* GMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A1161DE0663E00DED5E7 /* GMapViewController.swift */; };
-		CEB7CBE71DE065F2000D8A2E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CEB7CBE61DE065F2000D8A2E /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		251FFECB3AF64B960FEE002E /* Pods-MatZyp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatZyp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MatZyp/Pods-MatZyp.debug.xcconfig"; sourceTree = "<group>"; };
 		369A7E7B1DD5ACE3009FCB39 /* LanguageModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageModalViewController.swift; sourceTree = "<group>"; };
 		36CE296F1DC869040087F8F3 /* MatZyp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatZyp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36CE29721DC869040087F8F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +43,6 @@
 		36CE63ED1DD6F06000F73C7E /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		36D159B21DD0DE47007B4EAA /* LocationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
 		36D159B41DD0DE5B007B4EAA /* MenuListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListViewController.swift; sourceTree = "<group>"; };
-		6E0E8C36BE4828F6B76B5EAB /* libPods-MatZyp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MatZyp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24318151DE02E2B005F9317 /* ReviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
 		B26395C71DD8A9F40046952F /* MatZypListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatZypListTableViewCell.swift; sourceTree = "<group>"; };
 		B268B6D21DD76A3A00737189 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -61,9 +56,6 @@
 		B2BA89AD1DD8840200FC0C13 /* FifthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifthCell.swift; sourceTree = "<group>"; };
 		B2BA89AF1DD8840C00FC0C13 /* SixthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixthCell.swift; sourceTree = "<group>"; };
 		B2DEBB2C1DDEE0710036CEB8 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
-		CE16A1161DE0663E00DED5E7 /* GMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMapViewController.swift; sourceTree = "<group>"; };
-		CEB7CBE61DE065F2000D8A2E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		EA6FD20E841CCD1BF6D22258 /* Pods-MatZyp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatZyp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MatZyp/Pods-MatZyp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				027348FD0E372FE8E3C2CD99 /* libPods-MatZyp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,11 +72,8 @@
 		36CE29661DC869040087F8F3 = {
 			isa = PBXGroup;
 			children = (
-				CEB7CBE61DE065F2000D8A2E /* Podfile */,
 				36CE29711DC869040087F8F3 /* MatZyp */,
 				36CE29701DC869040087F8F3 /* Products */,
-				ADC3BABC11E1053D0B6F9921 /* Pods */,
-				98EF6F294139A19A145DEB86 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,26 +100,8 @@
 				36CE297E1DC869040087F8F3 /* Info.plist */,
 				369A7E7B1DD5ACE3009FCB39 /* LanguageModalViewController.swift */,
 				36CE63ED1DD6F06000F73C7E /* SettingController.swift */,
-				CE16A1161DE0663E00DED5E7 /* GMapViewController.swift */,
 			);
 			path = MatZyp;
-			sourceTree = "<group>";
-		};
-		98EF6F294139A19A145DEB86 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6E0E8C36BE4828F6B76B5EAB /* libPods-MatZyp.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		ADC3BABC11E1053D0B6F9921 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				251FFECB3AF64B960FEE002E /* Pods-MatZyp.debug.xcconfig */,
-				EA6FD20E841CCD1BF6D22258 /* Pods-MatZyp.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		B24318141DE02E10005F9317 /* ReviewView */ = {
@@ -192,12 +162,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36CE29811DC869040087F8F3 /* Build configuration list for PBXNativeTarget "MatZyp" */;
 			buildPhases = (
-				90675A1D96BD3E30B1C17FD3 /* [CP] Check Pods Manifest.lock */,
 				36CE296B1DC869040087F8F3 /* Sources */,
 				36CE296C1DC869040087F8F3 /* Frameworks */,
 				36CE296D1DC869040087F8F3 /* Resources */,
-				5770ECF3CE0B93517EB2C04E /* [CP] Embed Pods Frameworks */,
-				045EE8A8487C258BDA6084B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,60 +216,11 @@
 			files = (
 				36CE297D1DC869040087F8F3 /* LaunchScreen.storyboard in Resources */,
 				36CE297A1DC869040087F8F3 /* Assets.xcassets in Resources */,
-				CEB7CBE71DE065F2000D8A2E /* Podfile in Resources */,
 				36CE29781DC869040087F8F3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		045EE8A8487C258BDA6084B9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MatZyp/Pods-MatZyp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5770ECF3CE0B93517EB2C04E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MatZyp/Pods-MatZyp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		90675A1D96BD3E30B1C17FD3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		36CE296B1DC869040087F8F3 /* Sources */ = {
@@ -316,7 +234,6 @@
 				B2DEBB2D1DDEE0710036CEB8 /* RatingControl.swift in Sources */,
 				36D159B31DD0DE47007B4EAA /* LocationListViewController.swift in Sources */,
 				B24318161DE02E2B005F9317 /* ReviewTableViewController.swift in Sources */,
-				CE16A1171DE0663E00DED5E7 /* GMapViewController.swift in Sources */,
 				B2BA89A41DD86B5500FC0C13 /* FirstCell.swift in Sources */,
 				36D159B51DD0DE5B007B4EAA /* MenuListViewController.swift in Sources */,
 				36CE63EE1DD6F06000F73C7E /* SettingController.swift in Sources */,
@@ -451,7 +368,6 @@
 		};
 		36CE29821DC869040087F8F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 251FFECB3AF64B960FEE002E /* Pods-MatZyp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MatZyp/Info.plist;
@@ -464,7 +380,6 @@
 		};
 		36CE29831DC869040087F8F3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA6FD20E841CCD1BF6D22258 /* Pods-MatZyp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MatZyp/Info.plist;
