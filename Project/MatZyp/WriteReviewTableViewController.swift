@@ -1,44 +1,25 @@
 //
-//  ReviewTableViewController.swift
+//  WriteReviewTableViewController.swift
 //  MatZyp
 //
-//  Created by archane on 2016. 11. 19..
+//  Created by archane on 2016. 11. 25..
 //  Copyright © 2016년 CodersHigh. All rights reserved.
 //
 
 import UIKit
 
-class ReviewTableViewController: UITableViewController {
-
-    var matzyp:Matzyp?
-    var setting:Setting?
+class WriteReviewTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    
-    //Make button
-    override func viewWillAppear(_ animated: Bool) {
-        self.parent?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Edit_"), style: .plain, target: self, action: #selector(ReviewTableViewController.writeButtonTapped(_rightBarButtonItem:)))
-    }
-    //Delete button
-    override func viewWillDisappear(_ animated: Bool) {
-        self.parent?.navigationItem.rightBarButtonItem = nil
-    }
-    
-    override func viewDidLayoutSubviews() {
-        if let rect = self.navigationController?.navigationBar.frame {
-            let y = rect.size.height + rect.origin.y
-            self.tableView.contentInset = UIEdgeInsets(top: y,left: 0,bottom: 0,right: 0)
-        }
-    }
-    
-    func writeButtonTapped(_rightBarButtonItem: UIBarButtonItem) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let secondViewController = storyboard.instantiateViewController(withIdentifier: "writeReview") as! UINavigationController
-        self.present(secondViewController, animated: true, completion: nil)
-    }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -48,23 +29,26 @@ class ReviewTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 3
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        switch(indexPath.row) {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath)
+                return cell
+            default: print("hello")
+                    return UITableViewCell()
+        }
+        
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -132,7 +132,13 @@ class MatZypListViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        guard let destination = segue.destination as? UITabBarController , let selectedIndex = self.tableView.indexPathForSelectedRow?.section, let matzyp = location?.matzyps?[selectedIndex] else{
+        guard let destination = segue.destination as? SegViewController , let selectedIndex = self.tableView.indexPathForSelectedRow?.section, let matzyp = location?.matzyps?[selectedIndex] else{
+            return
+        }
+        destination.matzyp = matzyp
+        destination.setting = setting
+        
+        /*guard let destination = segue.destination as? UITabBarController , let selectedIndex = self.tableView.indexPathForSelectedRow?.section, let matzyp = location?.matzyps?[selectedIndex] else{
             return
         }
         
@@ -150,7 +156,7 @@ class MatZypListViewController: UITableViewController {
         
         review_tab.matzyp = matzyp
         review_tab.setting = setting
-        
+        */
         /*
         if segue.identifier == "MenuSegue" {
             if let destination = segue.destination as? MenuListViewController {

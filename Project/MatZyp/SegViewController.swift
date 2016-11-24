@@ -19,20 +19,26 @@ class SegViewController: UIViewController {
     }
 
     var currentViewController: UIViewController?
-    var firstChildTabVC: UITableViewController?
-    var secondChildTabVC: UITableViewController?
+    var firstChildTabVC: InfoListViewController?
+    var secondChildTabVC: MenuListViewController?
+    var thirdChildTabVC: ReviewTableViewController?
     
-    @IBOutlet weak var contentView: UITableView!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var segmentedControl: customSegmentedControl!
    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        segmentedControl.initUI()
         segmentedControl.selectedSegmentIndex = TabIndex.FirstChildTab.rawValue
         displayCurrentTab(tabIndex: TabIndex.FirstChildTab.rawValue)
-        // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -54,22 +60,35 @@ class SegViewController: UIViewController {
             self.contentView.addSubview(vc.view)
             self.currentViewController = vc
             vc.viewWillAppear(true)
+            
         }
     }
     
-    func viewControllerForSelectedSegmentIndex(index: Int) -> UIViewController? {
+    func viewControllerForSelectedSegmentIndex(index: Int) -> UITableViewController? {
         var vc: UITableViewController?
         switch index {
-        case TabIndex.FirstChildTab.rawValue :
+        case 0 :
             if firstChildTabVC == nil {
                 firstChildTabVC = self.storyboard?.instantiateViewController(withIdentifier: "Info") as! InfoListViewController?
             }
+            firstChildTabVC?.matzyp = matzyp
+            firstChildTabVC?.setting = setting
             vc = firstChildTabVC
-        case TabIndex.SecondChildTab.rawValue :
+        case 1 :
             if secondChildTabVC == nil {
                 secondChildTabVC = self.storyboard?.instantiateViewController(withIdentifier: "Menu") as! MenuListViewController?
             }
+            secondChildTabVC?.matzyp = matzyp
+            secondChildTabVC?.setting = setting
             vc = secondChildTabVC
+
+        case 2 :
+            if thirdChildTabVC == nil {
+                thirdChildTabVC = self.storyboard?.instantiateViewController(withIdentifier: "Review") as! ReviewTableViewController?
+            }
+            thirdChildTabVC?.matzyp = matzyp
+            thirdChildTabVC?.setting = setting
+            vc = thirdChildTabVC
         default:
             return nil
         }
