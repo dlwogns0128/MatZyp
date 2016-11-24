@@ -12,7 +12,7 @@ class ReviewTableViewController: UITableViewController {
 
     var matzyp:Matzyp?
     var setting:Setting?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,21 +21,26 @@ class ReviewTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.tabBarController?.navigationItem.title = matzyp?.name[(setting?.getLanguage())!]
-        self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Edit_"), style: .plain, target: nil, action: nil)
-        //self.tabBarController?.selectedViewController?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Edit_"), style: .plain, target: nil, action: nil)
+        
+        self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Edit_"), style: .plain, target: self, action: #selector(ReviewTableViewController.writeButtonTapped(_rightBarButtonItem:)))
     }
     
-    func writeButtonTapped(_rightBarButtonItem: UIBarButtonItem){
-        print("hello")
-    }
     override func viewDidLayoutSubviews() {
         if let rect = self.navigationController?.navigationBar.frame {
             let y = rect.size.height + rect.origin.y
             self.tableView.contentInset = UIEdgeInsets(top: y,left: 0,bottom: 0,right: 0)
         }
     }
-
+    
+    func writeButtonTapped(_rightBarButtonItem: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondViewController = storyboard.instantiateViewController(withIdentifier: "writeReview") as! UITableViewController
+        secondViewController.navigationItem.leftBarButtonItem = UIBarButtonItem()
+        secondViewController.navigationItem.rightBarButtonItem = UIBarButtonItem()
+        self.present(secondViewController, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(secondViewController, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

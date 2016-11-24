@@ -60,7 +60,8 @@ class GMapViewController: UIViewController, GMSMapViewDelegate{
         review_tab.matzyp = matzyp
         review_tab.setting = setting
         
-        self.present(vc, animated: true, completion: nil)
+        //self.present(vc, animated: true, completion: nil)
+        self.navigationController!.pushViewController(vc, animated: true)
         
     }
 

@@ -141,7 +141,7 @@ class MatZypListViewController: UITableViewController {
             let review_tab = destination.viewControllers?[2] as? ReviewTableViewController else {
                 return
             }
-    
+        
         info_tab.matzyp = matzyp
         info_tab.setting = setting
         
