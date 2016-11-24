@@ -18,11 +18,6 @@ class MenuListViewController: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        //self.title = matzyp?.name[(setting?.lang)!]
-        //self.navigationController?.isNavigationBarHidden = false
         
     }
     override func viewDidLayoutSubviews() {

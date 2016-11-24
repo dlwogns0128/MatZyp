@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class InfoListViewController: UITableViewController {
 
@@ -18,8 +19,7 @@ class InfoListViewController: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        self.tabBarController?.navigationItem.title = matzyp?.name[(setting?.getLanguage())!]
+        
     }
     override func viewDidLayoutSubviews() {
         if let rect = self.navigationController?.navigationBar.frame {
@@ -51,7 +51,7 @@ class InfoListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 6
+        return 7
     }
 
     
@@ -69,28 +69,41 @@ class InfoListViewController: UITableViewController {
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SecondCell", for: indexPath) as! SecondCell
-                self.tableView.rowHeight = 55
+                self.tableView.rowHeight = 40
+                tableView.separatorStyle
                 cell.NameLabel.text = matzyp?.name[(setting?.getLanguage())!]
                 return cell
             case 2:
+            
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ThirdCell", for: indexPath) as! ThirdCell
-                self.tableView.rowHeight = 40
-                cell.LocationLabel.text = matzyp?.location
+                let latitude:Double = 17.3850
+                let longitude:Double = 78.4867
+            
+                let imageURL = NSURL(string: "http://maps.googleapis.com/maps/api/staticmap?center=\(latitude),\(longitude)&zoom=30&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true")
+            
+                let imagedData = NSData(contentsOf: imageURL! as URL)!
+                self.tableView.rowHeight = 180
+                cell.Map.image = UIImage(data: imagedData as Data)
                 return cell
             case 3:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "FourthCell", for: indexPath) as! FourthCell
-                cell.TimeLabel.text = matzyp?.business_hour
+                self.tableView.rowHeight = 40
+                cell.LocationLabel.text = matzyp?.location
                 return cell
             case 4:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "FifthCell", for: indexPath) as! FifthCell
-                cell.PhoneLabel.text = matzyp?.number
+                cell.TimeLabel.text = matzyp?.business_hour
                 return cell
             case 5:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SixthCell", for: indexPath) as! SixthCell
+                cell.PhoneLabel.text = matzyp?.number
+                return cell
+            case 6:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "SeventhCell", for: indexPath) as! SeventhCell
                 cell.HomeLabel.text = matzyp?.homepage
                 return cell
             default:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "SixthCell", for: indexPath) as! SixthCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "SeventhCell", for: indexPath) as! SeventhCell
                 cell.HomeLabel.text = matzyp?.homepage
                 return cell
         }

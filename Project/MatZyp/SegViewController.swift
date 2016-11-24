@@ -28,6 +28,7 @@ class SegViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = matzyp?.name[(setting?.getLanguage())!]
         segmentedControl.initUI()
         segmentedControl.selectedSegmentIndex = TabIndex.FirstChildTab.rawValue
         displayCurrentTab(tabIndex: TabIndex.FirstChildTab.rawValue)
