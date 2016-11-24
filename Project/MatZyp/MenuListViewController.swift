@@ -23,7 +23,7 @@ class MenuListViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         //self.title = matzyp?.name[(setting?.lang)!]
         //self.navigationController?.isNavigationBarHidden = false
-        self.tabBarController?.navigationItem.title = matzyp?.name[(setting?.getLanguage())!]
+        
     }
     override func viewDidLayoutSubviews() {
         if let rect = self.navigationController?.navigationBar.frame {
