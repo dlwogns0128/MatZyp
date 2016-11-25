@@ -70,7 +70,7 @@ class InfoListViewController: UITableViewController {
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SecondCell", for: indexPath) as! SecondCell
                 self.tableView.rowHeight = 40
-                tableView.separatorStyle
+                
                 cell.NameLabel.text = matzyp?.name[(setting?.getLanguage())!]
                 return cell
             case 2:
