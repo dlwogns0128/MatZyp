@@ -37,7 +37,6 @@
 		B2DEBB2D1DDEE0710036CEB8 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DEBB2C1DDEE0710036CEB8 /* RatingControl.swift */; };
 		CE16A1171DE0663E00DED5E7 /* GMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A1161DE0663E00DED5E7 /* GMapViewController.swift */; };
 		CEADF87C1DE827940015FC0A /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEADF87B1DE827940015FC0A /* SearchResultController.swift */; };
-		CEADF8801DE8410B0015FC0A /* LocalMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEADF87F1DE8410B0015FC0A /* LocalMapViewController.swift */; };
 		CEB7CBE71DE065F2000D8A2E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CEB7CBE61DE065F2000D8A2E /* Podfile */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +74,6 @@
 		B2DEBB2C1DDEE0710036CEB8 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		CE16A1161DE0663E00DED5E7 /* GMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMapViewController.swift; sourceTree = "<group>"; };
 		CEADF87B1DE827940015FC0A /* SearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResultController.swift; path = ../SearchResultController.swift; sourceTree = "<group>"; };
-		CEADF87F1DE8410B0015FC0A /* LocalMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalMapViewController.swift; sourceTree = "<group>"; };
 		CEB7CBE61DE065F2000D8A2E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EA6FD20E841CCD1BF6D22258 /* Pods-MatZyp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatZyp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MatZyp/Pods-MatZyp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,7 +190,6 @@
 				B2BA89AD1DD8840200FC0C13 /* SixthCell.swift */,
 				B2BA89AF1DD8840C00FC0C13 /* SeventhCell.swift */,
 				B2BA89A51DD86B7000FC0C13 /* InfoListViewController.swift */,
-				CEADF87F1DE8410B0015FC0A /* LocalMapViewController.swift */,
 			);
 			name = InfoView;
 			sourceTree = "<group>";
@@ -349,7 +346,6 @@
 				B241D1491DE45227008348FF /* SegViewController.swift in Sources */,
 				36CE63EE1DD6F06000F73C7E /* SettingController.swift in Sources */,
 				B2BA89A81DD881EB00FC0C13 /* SecondCell.swift in Sources */,
-				CEADF8801DE8410B0015FC0A /* LocalMapViewController.swift in Sources */,
 				B2BA89A61DD86B7000FC0C13 /* InfoListViewController.swift in Sources */,
 				B2BA89AA1DD883EC00FC0C13 /* FourthCell.swift in Sources */,
 				B2BA89B01DD8840C00FC0C13 /* SeventhCell.swift in Sources */,

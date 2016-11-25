@@ -21,6 +21,10 @@ class InfoListViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+        self.title = matzyp?.name[(setting?.getLanguage())!]
+    }
     override func viewDidLayoutSubviews() {
         if let rect = self.navigationController?.navigationBar.frame {
             let y = rect.size.height + rect.origin.y

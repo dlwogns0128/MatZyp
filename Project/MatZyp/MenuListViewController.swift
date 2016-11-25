@@ -20,6 +20,10 @@ class MenuListViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+        
+    }
     override func viewDidLayoutSubviews() {
         if let rect = self.navigationController?.navigationBar.frame {
             let y = rect.size.height + rect.origin.y
