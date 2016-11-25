@@ -15,14 +15,16 @@ class ReviewTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Edit_"), style: .plain, target: self, action: #selector(ReviewTableViewController.writeButtonTapped(_rightBarButtonItem:)))
+    }
+    
+    //Make button
+    override func viewWillAppear(_ animated: Bool) {
+        self.parent?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Edit_"), style: .plain, target: self, action: #selector(ReviewTableViewController.writeButtonTapped(_rightBarButtonItem:)))
+    }
+    //Delete button
+    override func viewWillDisappear(_ animated: Bool) {
+        self.parent?.navigationItem.rightBarButtonItem = nil
     }
     
     override func viewDidLayoutSubviews() {
@@ -34,11 +36,8 @@ class ReviewTableViewController: UITableViewController {
     
     func writeButtonTapped(_rightBarButtonItem: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let secondViewController = storyboard.instantiateViewController(withIdentifier: "writeReview") as! UITableViewController
-        secondViewController.navigationItem.leftBarButtonItem = UIBarButtonItem()
-        secondViewController.navigationItem.rightBarButtonItem = UIBarButtonItem()
+        let secondViewController = storyboard.instantiateViewController(withIdentifier: "writeReview") as! UINavigationController
         self.present(secondViewController, animated: true, completion: nil)
-//        self.navigationController?.pushViewController(secondViewController, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

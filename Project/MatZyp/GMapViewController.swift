@@ -38,29 +38,16 @@ class GMapViewController: UIViewController, GMSMapViewDelegate{
         
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let vc : UITabBarController = storyboard.instantiateViewController(withIdentifier: "MatZypTabController") as! UITabBarController
+        let vc = storyboard.instantiateViewController(withIdentifier: "SegViewControllerID") as! SegViewController
         
         let selectedIndex:Int = marker.userData as! Int
         let location = dataCenter.locations[selectedIndex] as Location
         let setting = dataCenter.setting as Setting
         let matzyp = location.matzyps?[selectedIndex]
+
+        vc.matzyp = matzyp
+        vc.setting = setting
         
-        guard let info_tab = vc.viewControllers?[0] as? InfoListViewController,
-            let menu_tab = vc.viewControllers?[1] as? MenuListViewController,
-            let review_tab = vc.viewControllers?[2] as? ReviewTableViewController else {
-                return
-        }
-        
-        info_tab.matzyp = matzyp
-        info_tab.setting = setting
-        
-        menu_tab.matzyp = matzyp
-        menu_tab.setting = setting
-        
-        review_tab.matzyp = matzyp
-        review_tab.setting = setting
-        
-        //self.present(vc, animated: true, completion: nil)
         self.navigationController!.pushViewController(vc, animated: true)
         
     }

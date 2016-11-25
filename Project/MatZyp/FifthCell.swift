@@ -1,5 +1,5 @@
 //
-//  FifthCell.swift
+//  FourthCell.swift
 //  MatZyp
 //
 //  Created by archane on 2016. 11. 13..
@@ -10,7 +10,7 @@ import UIKit
 
 class FifthCell: UITableViewCell {
 
-    @IBOutlet weak var PhoneLabel: UILabel!
+    @IBOutlet weak var TimeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -2,7 +2,7 @@
 //  ThirdCell.swift
 //  MatZyp
 //
-//  Created by archane on 2016. 11. 13..
+//  Created by archane on 2016. 11. 25..
 //  Copyright © 2016년 CodersHigh. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import UIKit
 
 class ThirdCell: UITableViewCell {
 
-    @IBOutlet weak var LocationLabel: UILabel!
+    @IBOutlet weak var Map: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

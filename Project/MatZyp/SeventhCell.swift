@@ -1,5 +1,5 @@
 //
-//  ThirdCell.swift
+//  SixthCell.swift
 //  MatZyp
 //
 //  Created by archane on 2016. 11. 13..
@@ -8,10 +8,9 @@
 
 import UIKit
 
-class FourthCell: UITableViewCell {
+class SeventhCell: UITableViewCell {
 
-    @IBOutlet weak var LocationLabel: UILabel!
-
+    @IBOutlet weak var HomeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

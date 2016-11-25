@@ -1,17 +1,16 @@
 //
-//  ThirdCell.swift
+//  WriteReviewTableViewCell.swift
 //  MatZyp
 //
-//  Created by archane on 2016. 11. 13..
+//  Created by archane on 2016. 11. 25..
 //  Copyright © 2016년 CodersHigh. All rights reserved.
 //
 
 import UIKit
 
-class FourthCell: UITableViewCell {
+class WriteReviewTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var LocationLabel: UILabel!
-
+    @IBOutlet weak var ratingControl: RatingControl!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

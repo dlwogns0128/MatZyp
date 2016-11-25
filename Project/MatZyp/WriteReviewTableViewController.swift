@@ -1,46 +1,30 @@
 //
-//  MenuListViewController.swift
+//  WriteReviewTableViewController.swift
 //  MatZyp
 //
-//  Created by hyu on 2016. 11. 8..
+//  Created by archane on 2016. 11. 25..
 //  Copyright © 2016년 CodersHigh. All rights reserved.
 //
 
 import UIKit
 
-class MenuListViewController: UITableViewController {
+class WriteReviewTableViewController: UITableViewController {
 
-    var matzyp:Matzyp?
-    var setting:Setting?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    override func viewDidLayoutSubviews() {
-        if let rect = self.navigationController?.navigationBar.frame {
-            let y = rect.size.height + rect.origin.y
-            self.tableView.contentInset = UIEdgeInsets(top: y,left: 0,bottom: 0,right: 0)
-        }
-    }
-    /* Hide navigation tab only when screen is top*/
-    /*
-    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
-           // self.navigationController?.isNavigationBarHidden = false
-        } else {
-           // self.navigationController?.isNavigationBarHidden = true
-        }
-    }
-    */
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -50,24 +34,19 @@ class MenuListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        guard let rowCount = matzyp?.menus?.count else{
-            return 0
-        }
-        return rowCount
+        return 3
     }
-    
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
-
-        guard let menu = matzyp?.menus?[indexPath.row] else{
-            return cell
+        switch(indexPath.row) {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath)
+                return cell
+            default: print("hello")
+                    return UITableViewCell()
         }
-        cell.nameLabel?.text = menu.name[(setting?.lang)!]
-        cell.menuImageView.image = menu.img;
-        cell.priceLabel?.text = "\(menu.price)원"
-        return cell
+        
     }
     
 
@@ -106,14 +85,13 @@ class MenuListViewController: UITableViewController {
     }
     */
 
-    
-    // MARK: - Navigation
     /*
+    // MARK: - Navigation
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-
     }
     */
 
