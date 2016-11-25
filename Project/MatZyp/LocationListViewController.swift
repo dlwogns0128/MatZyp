@@ -21,6 +21,9 @@ class LocationListViewController: UITableViewController {
        
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 /*
      bottom tool bar
     override func viewWillAppear(_ animated: Bool) {
