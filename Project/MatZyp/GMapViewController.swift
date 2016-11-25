@@ -107,6 +107,7 @@ class GMapViewController: UIViewController, GMSMapViewDelegate, UISearchBarDeleg
         
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
+        let previous = storyboard.instantiateViewController(withIdentifier: "MatZypListView") as! MatZypListViewController
         let vc = storyboard.instantiateViewController(withIdentifier: "SegViewControllerID") as! SegViewController
         
         let selectedIndex:Int = marker.userData as! Int
@@ -114,9 +115,12 @@ class GMapViewController: UIViewController, GMSMapViewDelegate, UISearchBarDeleg
         let setting = dataCenter.setting as Setting
         let matzyp = location.matzyps?[selectedIndex]
 
+        previous.location = location
+        previous.setting = setting
         vc.matzyp = matzyp
         vc.setting = setting
         
+        self.navigationController!.pushViewController(previous, animated: true)
         self.navigationController!.pushViewController(vc, animated: true)
         
     }
