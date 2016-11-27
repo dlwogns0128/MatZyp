@@ -119,7 +119,6 @@ class GMapViewController: UIViewController, GMSMapViewDelegate, UISearchBarDeleg
         //previous.setting = setting
         vc.matzyp = matzyp
         vc.setting = setting
-        
         //self.navigationController!.pushViewController(previous, animated: true)
         self.navigationController!.pushViewController(vc, animated: true)
         
