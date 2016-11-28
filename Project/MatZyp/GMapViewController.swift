@@ -8,9 +8,48 @@
 
 import UIKit
 import GoogleMaps
+import GooglePlaces
 
-class GMapViewController: UIViewController, GMSMapViewDelegate{
+class GMapViewController: UIViewController, GMSMapViewDelegate, UISearchBarDelegate, LocateOnTheMap, GMSAutocompleteFetcherDelegate{
 
+    /**
+     * Called when an autocomplete request returns an error.
+     * @param error the error that was received.
+     */
+    public func didFailAutocompleteWithError(_ error: Error) {
+        //        resultText?.text = error.localizedDescription
+    }
+    
+    /**
+     * Called when autocomplete predictions are available.
+     * @param predictions an array of GMSAutocompletePrediction objects.
+     */
+    public func didAutocomplete(with predictions: [GMSAutocompletePrediction]) {
+        //self.resultsArray.count + 1
+        
+        for prediction in predictions {
+            
+            if let prediction = prediction as GMSAutocompletePrediction!{
+                self.resultArray.append(prediction.attributedFullText.string)
+            }
+        }
+        self.searchResultController.reloadDataWithArray(self.resultArray)
+        //   self.searchResultsTable.reloadDataWithArray(self.resultsArray)
+        print(resultArray)
+    }
+    
+    
+    var searchResultController : SearchResultsController!
+    var resultArray = [String]()
+    var gmsFetcher: GMSAutocompleteFetcher!
+    
+    @IBAction func searchWithAddress(_ sender: Any) {
+        let searchController = UISearchController(searchResultsController: searchResultController)
+        searchController.searchBar.delegate = self
+        self.present(searchController, animated: true, completion: nil)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,11 +72,42 @@ class GMapViewController: UIViewController, GMSMapViewDelegate{
         marker.map = mapView
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        searchResultController = SearchResultsController()
+        searchResultController.delegate = self
+        gmsFetcher = GMSAutocompleteFetcher()
+        gmsFetcher.delegate = self
+    }
+    
+    func locateWithLongitude(_ lon: Double, andLatitude lat: Double, andTitle title: String) {
+        
+        
+        
+        DispatchQueue.main.async { () -> Void in
+            
+            //let position = CLLocationCoordinate2DMake(lat, lon)
+            //let marker = GMSMarker(position: position)
+            
+            let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: lon, zoom: 17)
+            //self.googleMapsView.camera = camera
+            let foundView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+            self.view = foundView
+            
+            //marker.title = "Address : \(title)"
+            //marker.map = self.googleMapsView
+            
+        }
+        
+    }
+    
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         
         
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
+        //let previous = storyboard.instantiateViewController(withIdentifier: "MatZypListView") as! MatZypListViewController
         let vc = storyboard.instantiateViewController(withIdentifier: "SegViewControllerID") as! SegViewController
         
         let selectedIndex:Int = marker.userData as! Int
@@ -45,10 +115,43 @@ class GMapViewController: UIViewController, GMSMapViewDelegate{
         let setting = dataCenter.setting as Setting
         let matzyp = location.matzyps?[selectedIndex]
 
+        //previous.location = location
+        //previous.setting = setting
         vc.matzyp = matzyp
         vc.setting = setting
-        
+        //self.navigationController!.pushViewController(previous, animated: true)
         self.navigationController!.pushViewController(vc, animated: true)
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        //        let placeClient = GMSPlacesClient()
+        //
+        //
+        //        placeClient.autocompleteQuery(searchText, bounds: nil, filter: nil)  {(results, error: Error?) -> Void in
+        //           // NSError myerr = Error;
+        //            print("Error @%",Error.self)
+        //
+        //            self.resultsArray.removeAll()
+        //            if results == nil {
+        //                return
+        //            }
+        //
+        //            for result in results! {
+        //                if let result = result as? GMSAutocompletePrediction {
+        //                    self.resultsArray.append(result.attributedFullText.string)
+        //                }
+        //            }
+        //
+        //            self.searchResultController.reloadDataWithArray(self.resultsArray)
+        //
+        //        }
+        
+        
+        self.resultArray.removeAll()
+        gmsFetcher?.sourceTextHasChanged(searchText)
+        
         
     }
 

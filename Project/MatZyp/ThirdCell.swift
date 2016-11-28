@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class ThirdCell: UITableViewCell {
 
-    @IBOutlet weak var Map: UIImageView!
+    @IBOutlet weak var LocalMap: UIView!
+    var googleMapsView: GMSMapView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

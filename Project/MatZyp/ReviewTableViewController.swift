@@ -20,6 +20,7 @@ class ReviewTableViewController: UITableViewController {
     
     //Make button
     override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
         self.parent?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Edit_"), style: .plain, target: self, action: #selector(ReviewTableViewController.writeButtonTapped(_rightBarButtonItem:)))
     }
     //Delete button

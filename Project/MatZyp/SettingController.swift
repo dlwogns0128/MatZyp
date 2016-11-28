@@ -21,7 +21,10 @@ class SettingController: UITableViewController {
     @IBOutlet weak var check2: UISwitch!
     @IBOutlet weak var check3: UISwitch!
     var lang : Language = dataCenter.setting.getLanguage()
+    var lang_String: String = ""
 
+    @IBOutlet weak var changeButton: UIButton!
+    //언어 변경할때 마다 그에 맞는 버튼 title 바꿔주기
     override func viewDidLoad() {
         super.viewDidLoad()
         print("hi")
@@ -31,12 +34,15 @@ class SettingController: UITableViewController {
         check3.isOn = false
         if(lang == .korean){
             check1.isOn = true
+            lang_String = "한국어"
         }
         else if (lang == .english){
             check2.isOn = true
+            lang_String = "영어"
         }
         else {
             check3.isOn = true
+            lang_String = "중국어"
         }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -70,6 +76,7 @@ class SettingController: UITableViewController {
             check2.isOn = false
             check3.isOn = false
             lang = .korean
+            lang_String = "한국어"
         }
     }
     @IBAction func changeCheck2(_ sender: Any) {
@@ -79,6 +86,7 @@ class SettingController: UITableViewController {
             check1.isOn = false
             check3.isOn = false
             lang = .english
+            lang_String = "영어"
         }
     }
     @IBAction func changeCheck3(_ sender: Any) {
@@ -86,6 +94,7 @@ class SettingController: UITableViewController {
             check1.isOn = false
             check2.isOn = false
             lang = .chinese
+            lang_String = "중국어"
         }
     }
     @IBAction func changeLanguage(_ sender: Any) {
@@ -95,6 +104,18 @@ class SettingController: UITableViewController {
         super.viewWillAppear(true)
         tableView.reloadData()
         print("hi")
+        let alert = UIAlertController(title: "언어 변경", message: "\(lang_String)로 변경합니다.", preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        
+        // change to desired number of seconds (in this case 5 seconds)
+        let when = DispatchTime.now() + 1
+        DispatchQueue.main.asyncAfter(deadline: when){
+            // your code with delay
+            alert.dismiss(animated: true, completion: nil)
+        }
+        //to-do 
+        //언어 변경할 때 그 글자들 다 번역되게 해놓기
+        
     }
 
     /*

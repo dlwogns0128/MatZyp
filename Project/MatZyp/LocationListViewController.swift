@@ -21,6 +21,9 @@ class LocationListViewController: UITableViewController {
        
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 /*
      bottom tool bar
     override func viewWillAppear(_ animated: Bool) {
@@ -58,10 +61,9 @@ class LocationListViewController: UITableViewController {
             
             let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             
-            let vc : UINavigationController = storyboard.instantiateViewController(withIdentifier: "GMapViewController") as! UINavigationController
+            let vc : UIViewController = storyboard.instantiateViewController(withIdentifier: "GMapView")
             
-            self.present(vc, animated: true, completion: nil)
-            
+            self.navigationController!.pushViewController(vc, animated: true)
         })
         let cancleAction = UIAlertAction(title: "위치 정보 끄기", style: .default, handler: {(action:UIAlertAction) -> Void in print("위치 정보 끄기")})
         

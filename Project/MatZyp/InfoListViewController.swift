@@ -21,6 +21,10 @@ class InfoListViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+        self.title = matzyp?.name[(setting?.getLanguage())!]
+    }
     override func viewDidLayoutSubviews() {
         if let rect = self.navigationController?.navigationBar.frame {
             let y = rect.size.height + rect.origin.y
@@ -70,7 +74,7 @@ class InfoListViewController: UITableViewController {
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SecondCell", for: indexPath) as! SecondCell
                 self.tableView.rowHeight = 40
-                tableView.separatorStyle
+                
                 cell.NameLabel.text = matzyp?.name[(setting?.getLanguage())!]
                 return cell
             case 2:
@@ -78,12 +82,20 @@ class InfoListViewController: UITableViewController {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ThirdCell", for: indexPath) as! ThirdCell
                 let latitude:Double = 17.3850
                 let longitude:Double = 78.4867
-            
-                let imageURL = NSURL(string: "http://maps.googleapis.com/maps/api/staticmap?center=\(latitude),\(longitude)&zoom=30&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true")
-            
-                let imagedData = NSData(contentsOf: imageURL! as URL)!
+                let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: 17)
+                
+                cell.googleMapsView = GMSMapView(frame: cell.LocalMap.frame)
+                cell.addSubview(cell.googleMapsView)
+                
+                cell.googleMapsView.camera = camera
+                
+                let Location = CLLocationCoordinate2DMake(latitude, longitude)
+                let marker = GMSMarker(position: Location)
+                marker.title = matzyp?.name[(setting?.getLanguage())!]
+                marker.map = cell.googleMapsView
+                
                 self.tableView.rowHeight = 180
-                cell.Map.image = UIImage(data: imagedData as Data)
+                
                 return cell
             case 3:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "FourthCell", for: indexPath) as! FourthCell
