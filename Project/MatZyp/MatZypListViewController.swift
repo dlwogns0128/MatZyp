@@ -28,7 +28,11 @@ class MatZypListViewController: UITableViewController {
         //타이틀은 네비게이션 아이템의 타이틀이 없을 경우 뷰 컨트롤러의 타이틀을 자동으로 사용
         
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+        self.title = location?.name[(setting?.getLanguage())!]
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
