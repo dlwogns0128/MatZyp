@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cbM-rh-id6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cbM-rh-id6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -501,8 +501,28 @@
                     <view key="view" contentMode="scaleToFill" id="Y8l-wn-ihX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lLo-i3-MeJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="지도" id="Fyu-PW-HN6"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6f9-fP-R3A" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bcZ-Wd-Zua" firstAttribute="top" secondItem="6f9-fP-R3A" secondAttribute="bottom" id="GYE-Yh-Ewg"/>
+                            <constraint firstItem="6f9-fP-R3A" firstAttribute="top" secondItem="nWZ-UN-hhb" secondAttribute="bottom" id="gTe-bJ-wEq"/>
+                            <constraint firstAttribute="trailing" secondItem="6f9-fP-R3A" secondAttribute="trailing" id="iAD-HN-HEW"/>
+                            <constraint firstItem="6f9-fP-R3A" firstAttribute="leading" secondItem="Y8l-wn-ihX" secondAttribute="leading" id="sAY-ZQ-5xC"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="0Si-nC-m8p"/>
                     <navigationItem key="navigationItem" title="지도" id="muc-HC-QkM">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="iGe-5a-rO1">
                             <connections>
@@ -510,6 +530,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="myMap" destination="6f9-fP-R3A" id="Jod-lt-q5l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcr-Nw-4Hm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -657,7 +680,7 @@
         <scene sceneID="yXG-uj-74N">
             <objects>
                 <navigationController id="060-oh-8rW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="home" image="F10C789A-5BEB-4FFE-860A-0FF9CA63085C" id="lZP-FU-QPQ"/>
+                    <tabBarItem key="tabBarItem" title="home" image="B2532C51-96C1-4CCF-88A9-94B0C6D93D08" id="lZP-FU-QPQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Mh8-oq-gm6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -815,14 +838,16 @@
             </objects>
             <point key="canvasLocation" x="2674.4000000000001" y="300.89955022488761"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="kdj-kZ-WVh">
             <objects>
                 <navigationController storyboardIdentifier="GMapViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SJ6-gy-yHn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="cVe-Q0-9Wi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="PVQ-ze-3XB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1458417773" green="0.62847143409999995" blue="0.63451164959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -922,6 +947,7 @@
                         <segue destination="060-oh-8rW" kind="relationship" relationship="viewControllers" id="eGM-F4-ftQ"/>
                         <segue destination="vb4-OD-cgM" kind="relationship" relationship="viewControllers" id="L6F-Pf-eve"/>
                         <segue destination="nf2-TG-oHW" kind="relationship" relationship="viewControllers" id="ljo-3B-Zxf"/>
+                        <segue destination="SJ6-gy-yHn" kind="relationship" relationship="viewControllers" id="XHe-fE-BIW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2T-KE-Lur" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -930,7 +956,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="F10C789A-5BEB-4FFE-860A-0FF9CA63085C" width="25" height="25">
+        <image name="B2532C51-96C1-4CCF-88A9-94B0C6D93D08" width="25" height="25">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

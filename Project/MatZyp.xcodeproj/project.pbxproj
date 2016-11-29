@@ -43,6 +43,7 @@
 		CE16A1171DE0663E00DED5E7 /* GMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A1161DE0663E00DED5E7 /* GMapViewController.swift */; };
 		CEADF87C1DE827940015FC0A /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEADF87B1DE827940015FC0A /* SearchResultController.swift */; };
 		CEB7CBE71DE065F2000D8A2E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CEB7CBE61DE065F2000D8A2E /* Podfile */; };
+		CEFA53B11DED6FB3002CFD83 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEFA53B01DED6FB3002CFD83 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		CE16A1161DE0663E00DED5E7 /* GMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMapViewController.swift; sourceTree = "<group>"; };
 		CEADF87B1DE827940015FC0A /* SearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResultController.swift; path = ../SearchResultController.swift; sourceTree = "<group>"; };
 		CEB7CBE61DE065F2000D8A2E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CEFA53B01DED6FB3002CFD83 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EA6FD20E841CCD1BF6D22258 /* Pods-MatZyp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatZyp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MatZyp/Pods-MatZyp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFA53B11DED6FB3002CFD83 /* CoreLocation.framework in Frameworks */,
 				027348FD0E372FE8E3C2CD99 /* libPods-MatZyp.a in Frameworks */,
 				B2D01BA61DEC77BA0092050F /* FBSDKCoreKit.framework in Frameworks */,
 				B2D01BA81DEC77BA0092050F /* FBSDKShareKit.framework in Frameworks */,
@@ -129,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				B2D01BAB1DEC7EE60092050F /* MatZyp.entitlements */,
-				CEADF87B1DE827940015FC0A /* SearchResultController.swift */,
 				36CE29841DC869140087F8F3 /* DataCenter.swift */,
 				36D159B21DD0DE47007B4EAA /* LocationListViewController.swift */,
 				B2AEF5BA1DCF2296009A0476 /* ViewController.swift */,
@@ -142,7 +144,7 @@
 				36CE297E1DC869040087F8F3 /* Info.plist */,
 				369A7E7B1DD5ACE3009FCB39 /* LanguageModalViewController.swift */,
 				36CE63ED1DD6F06000F73C7E /* SettingController.swift */,
-				CE16A1161DE0663E00DED5E7 /* GMapViewController.swift */,
+				CE02C5A11DED9B9100BBEEB0 /* GoogleMap */,
 				B241D1481DE45227008348FF /* SegViewController.swift */,
 				B2D31FE81DE7434E000513B4 /* customSegmentedControl.swift */,
 				B2D01B9D1DEC76D00092050F /* MatZyp-Bridging-Header.h */,
@@ -154,6 +156,7 @@
 		98EF6F294139A19A145DEB86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEFA53B01DED6FB3002CFD83 /* CoreLocation.framework */,
 				B2D01BA11DEC77BA0092050F /* Bolts.framework */,
 				B2D01BA21DEC77BA0092050F /* FBSDKCoreKit.framework */,
 				B2D01BA31DEC77BA0092050F /* FBSDKLoginKit.framework */,
@@ -224,6 +227,15 @@
 				B268B6D21DD76A3A00737189 /* MenuCell.swift */,
 			);
 			name = MenuView;
+			sourceTree = "<group>";
+		};
+		CE02C5A11DED9B9100BBEEB0 /* GoogleMap */ = {
+			isa = PBXGroup;
+			children = (
+				CEADF87B1DE827940015FC0A /* SearchResultController.swift */,
+				CE16A1161DE0663E00DED5E7 /* GMapViewController.swift */,
+			);
+			name = GoogleMap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
