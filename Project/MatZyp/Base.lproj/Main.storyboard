@@ -181,7 +181,7 @@
             </objects>
             <point key="canvasLocation" x="4783" y="-770"/>
         </scene>
-        <!--Setting Controller-->
+        <!--설정-->
         <scene sceneID="JCj-h1-ogr">
             <objects>
                 <tableViewController id="nf2-TG-oHW" customClass="SettingController" customModule="MatZyp" customModuleProvider="target" sceneMemberID="viewController">
@@ -314,7 +314,7 @@
                             <outlet property="delegate" destination="nf2-TG-oHW" id="XDT-k5-Yk7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Dlo-5R-q2C"/>
+                    <navigationItem key="navigationItem" title="설정" id="Dlo-5R-q2C"/>
                     <connections>
                         <outlet property="changeButton" destination="QVm-h4-a8W" id="QHL-V0-SoM"/>
                         <outlet property="check1" destination="ezY-hb-quc" id="V1m-w8-rKe"/>
@@ -786,7 +786,7 @@
             </objects>
             <point key="canvasLocation" x="329" y="-770"/>
         </scene>
-        <!--지역 선택-->
+        <!--지역-->
         <scene sceneID="VHY-zt-Nmd">
             <objects>
                 <tableViewController storyboardIdentifier="LocationListView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1UQ-6U-XnE" customClass="LocationListViewController" customModule="MatZyp" customModuleProvider="target" sceneMemberID="viewController">
@@ -817,8 +817,7 @@
                     <toolbarItems>
                         <barButtonItem title="Set Langugae" id="zdQ-0r-ulp"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="지역 선택" id="d86-Fm-h5q">
-                        <barButtonItem key="backBarButtonItem" title="지역" id="mcS-3k-6Q0"/>
+                    <navigationItem key="navigationItem" title="지역" id="d86-Fm-h5q">
                         <barButtonItem key="rightBarButtonItem" image="Marker Filled-50" id="cxW-uA-qyQ">
                             <connections>
                                 <action selector="locationTurnOn:" destination="1UQ-6U-XnE" id="hCE-jZ-wGq"/>
@@ -949,11 +948,11 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="300.89955022488761"/>
         </scene>
-        <!--Setting-->
+        <!--설정-->
         <scene sceneID="9b3-iS-e58">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zxh-2g-e1j" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Setting" image="Setting" id="xdT-D6-PIM"/>
+                    <tabBarItem key="tabBarItem" title="설정" image="Setting" id="xdT-D6-PIM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="X4e-9Y-gCw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

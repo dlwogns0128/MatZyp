@@ -50,7 +50,7 @@ class SettingController: UITableViewController {
         
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -116,6 +116,20 @@ class SettingController: UITableViewController {
             // your code with delay
             alert.dismiss(animated: true, completion: nil)
             
+        }
+        
+        if (lang == .korean) {
+            self.title = "설정"
+            self.tabBarController?.tabBar.items?[0].title = "지역"
+            self.tabBarController?.tabBar.items?[1].title = "지도"
+        } else if (lang == .english) {
+            self.title = "Setting"
+            self.tabBarController?.tabBar.items?[0].title = "Location"
+            self.tabBarController?.tabBar.items?[1].title = "Map"
+        } else if (lang == .chinese) {
+            self.title = "設定"
+            self.tabBarController?.tabBar.items?[0].title = "地域"
+            self.tabBarController?.tabBar.items?[1].title = "地图"
         }
         //to-do 
         //언어 변경할 때 그 글자들 다 번역되게 해놓기
