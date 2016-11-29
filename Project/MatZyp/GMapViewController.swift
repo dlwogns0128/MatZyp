@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
-class GMapViewController: UIViewController, GMSMapViewDelegate, UISearchBarDelegate, LocateOnTheMap, GMSAutocompleteFetcherDelegate{
+class GMapViewController: UIViewController, GMSMapViewDelegate, UISearchBarDelegate, LocateOnTheMap, GMSAutocompleteFetcherDelegate, CLLocationManagerDelegate{
 
     /**
      * Called when an autocomplete request returns an error.
@@ -35,13 +35,15 @@ class GMapViewController: UIViewController, GMSMapViewDelegate, UISearchBarDeleg
         }
         self.searchResultController.reloadDataWithArray(self.resultArray)
         //   self.searchResultsTable.reloadDataWithArray(self.resultsArray)
-        print(resultArray)
+        //print(resultArray)
     }
     
+    @IBOutlet weak var myMap: GMSMapView!
     
     var searchResultController : SearchResultsController!
     var resultArray = [String]()
     var gmsFetcher: GMSAutocompleteFetcher!
+    let locationManager = CLLocationManager()
     
     @IBAction func searchWithAddress(_ sender: Any) {
         let searchController = UISearchController(searchResultsController: searchResultController)
@@ -54,22 +56,22 @@ class GMapViewController: UIViewController, GMSMapViewDelegate, UISearchBarDeleg
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
         
-        
-        GMSServices.provideAPIKey("AIzaSyCG-ZjlJaZK64zDyb2rGQ8eIgNs2DlhbPs")
         let camera = GMSCameraPosition.camera(withLatitude: 37.558814, longitude: 127.040152, zoom: 12)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView.mapType = kGMSTypeNormal
-        mapView.isMyLocationEnabled = true
-        mapView.settings.myLocationButton = true
-        mapView.delegate = self
-        self.view = mapView
+        
+        myMap.mapType = kGMSTypeNormal
+        myMap.isMyLocationEnabled = true
+        myMap.settings.myLocationButton = true
+        myMap.delegate = self
+        myMap.camera = camera
         
         let currentLocation = CLLocationCoordinate2DMake(37.558814, 127.040152)
         let marker = GMSMarker(position: currentLocation)
         marker.title = "알촌"
         marker.userData = 1
-        marker.map = mapView
+        marker.map = myMap
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -92,8 +94,7 @@ class GMapViewController: UIViewController, GMSMapViewDelegate, UISearchBarDeleg
             
             let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: lon, zoom: 17)
             //self.googleMapsView.camera = camera
-            let foundView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-            self.view = foundView
+            self.myMap.camera = camera
             
             //marker.title = "Address : \(title)"
             //marker.map = self.googleMapsView
@@ -172,3 +173,35 @@ class GMapViewController: UIViewController, GMSMapViewDelegate, UISearchBarDeleg
     */
 
 }
+
+// MARK: - CLLocationManagerDelegate
+//1
+/*extension GMapViewController{
+    // 2
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        // 3
+        if status == .authorizedWhenInUse {
+            
+            // 4
+            locationManager.startUpdatingLocation()
+            
+            //5
+            myMap.isMyLocationEnabled = true
+            myMap.settings.myLocationButton = true
+        }
+    }
+    
+    // 6
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            
+            // 7
+            myMap.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+            
+            // 8
+            locationManager.stopUpdatingLocation()
+        }
+        
+    }
+}
+*/
