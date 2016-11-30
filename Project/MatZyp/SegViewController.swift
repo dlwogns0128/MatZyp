@@ -32,10 +32,11 @@ class SegViewController: UIViewController {
         segmentedControl.initUI()
         segmentedControl.selectedSegmentIndex = TabIndex.FirstChildTab.rawValue
         displayCurrentTab(tabIndex: TabIndex.FirstChildTab.rawValue)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = false
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
