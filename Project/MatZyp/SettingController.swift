@@ -35,22 +35,22 @@ class SettingController: UITableViewController {
         if(lang == .korean){
             check1.isOn = true
             lang_String = "한국어"
+            self.title = "설정"
         }
         else if (lang == .english){
             check2.isOn = true
             lang_String = "영어"
+            self.title = "Setting"
         }
         else {
             check3.isOn = true
             lang_String = "중국어"
+            self.title = "設定"
         }
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -77,6 +77,7 @@ class SettingController: UITableViewController {
             check3.isOn = false
             lang = .korean
             lang_String = "한국어"
+           // self.title = "설정"
         }
     }
     @IBAction func changeCheck2(_ sender: Any) {
@@ -87,6 +88,7 @@ class SettingController: UITableViewController {
             check3.isOn = false
             lang = .english
             lang_String = "영어"
+            //self.title = "Setting"
         }
     }
     @IBAction func changeCheck3(_ sender: Any) {
@@ -95,6 +97,7 @@ class SettingController: UITableViewController {
             check2.isOn = false
             lang = .chinese
             lang_String = "중국어"
+            //self.title = "設定"
         }
     }
     @IBAction func changeLanguage(_ sender: Any) {
@@ -112,6 +115,21 @@ class SettingController: UITableViewController {
         DispatchQueue.main.asyncAfter(deadline: when){
             // your code with delay
             alert.dismiss(animated: true, completion: nil)
+            
+        }
+        
+        if (lang == .korean) {
+            self.title = "설정"
+            self.tabBarController?.tabBar.items?[0].title = "지역"
+            self.tabBarController?.tabBar.items?[1].title = "지도"
+        } else if (lang == .english) {
+            self.title = "Setting"
+            self.tabBarController?.tabBar.items?[0].title = "Location"
+            self.tabBarController?.tabBar.items?[1].title = "Map"
+        } else if (lang == .chinese) {
+            self.title = "設定"
+            self.tabBarController?.tabBar.items?[0].title = "地域"
+            self.tabBarController?.tabBar.items?[1].title = "地图"
         }
         //to-do 
         //언어 변경할 때 그 글자들 다 번역되게 해놓기
