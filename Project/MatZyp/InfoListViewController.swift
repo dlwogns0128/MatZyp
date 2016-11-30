@@ -80,8 +80,8 @@ class InfoListViewController: UITableViewController {
             case 2:
             
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ThirdCell", for: indexPath) as! ThirdCell
-                let latitude:Double = 17.3850
-                let longitude:Double = 78.4867
+                let latitude:Double = (matzyp?.latitude)!
+                let longitude:Double = (matzyp?.longitude)!
                 let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: 17)
                 
                 cell.googleMapsView = GMSMapView(frame: cell.LocalMap.frame)
