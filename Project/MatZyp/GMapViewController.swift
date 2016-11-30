@@ -71,11 +71,31 @@ class GMapViewController: UIViewController, GMSMapViewDelegate, UISearchBarDeleg
         myMap.delegate = self
         myMap.camera = camera
         
-        let currentLocation = CLLocationCoordinate2DMake(37.558814, 127.040152)
-        let marker = GMSMarker(position: currentLocation)
-        marker.title = "알촌"
-        marker.userData = 1
-        marker.map = myMap
+        //let currentLocation = CLLocationCoordinate2DMake(37.558814, 127.040152)
+        //let marker = GMSMarker(position: currentLocation)
+        //marker.title = "알촌"
+        //marker.userData = [0,1]
+        //marker.map = myMap
+        
+        let alchoneMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: dataCenter.alchone.latitude,longitude: dataCenter.alchone.longitude))
+        alchoneMarker.title = "알촌"
+        alchoneMarker.map = myMap
+        alchoneMarker.userData = [7,1]
+        
+        let hanyangChoneMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: dataCenter.hanyangChone.latitude, longitude: dataCenter.hanyangChone.longitude))
+        hanyangChoneMarker.title = "한양촌"
+        hanyangChoneMarker.map = myMap
+        hanyangChoneMarker.userData = [7,0]
+        
+        let daedoSikttangMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: dataCenter.daedosikttang.latitude, longitude: dataCenter.daedosikttang.longitude))
+        daedoSikttangMarker.title = "대도식당"
+        daedoSikttangMarker.map = myMap
+        daedoSikttangMarker.userData = [7,2]
+        
+        let gwangMoonMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: dataCenter.gwangMoon.latitude, longitude: dataCenter.gwangMoon.longitude))
+        gwangMoonMarker.title = "광화문집"
+        gwangMoonMarker.map = myMap
+        gwangMoonMarker.userData = [1,0]
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -115,11 +135,14 @@ class GMapViewController: UIViewController, GMSMapViewDelegate, UISearchBarDeleg
         //let previous = storyboard.instantiateViewController(withIdentifier: "MatZypListView") as! MatZypListViewController
         let vc = storyboard.instantiateViewController(withIdentifier: "SegViewControllerID") as! SegViewController
         
-        let selectedIndex:Int = marker.userData as! Int
-        let location = dataCenter.locations[selectedIndex] as Location
+        //let selectedIndex:Int = marker.userData as! Int
+        //let location = dataCenter.locations[selectedIndex] as Location
+        let selectIndexSet = marker.userData as! Array<Int>
         let setting = dataCenter.setting as Setting
-        let matzyp = location.matzyps?[selectedIndex]
-
+        //let matzyp = location.matzyps?[selectedIndex]
+        let location = dataCenter.locations[selectIndexSet[0]] as Location
+        let matzyp = location.matzyps?[selectIndexSet[1]]
+        
         //previous.location = location
         //previous.setting = setting
         vc.matzyp = matzyp
