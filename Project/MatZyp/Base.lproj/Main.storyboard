@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cbM-rh-id6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cbM-rh-id6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -179,68 +179,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7M1-qw-NPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4228" y="-357.57121439280365"/>
+            <point key="canvasLocation" x="4783" y="-770"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="7be-x5-IgG">
-            <objects>
-                <tableViewController id="vb4-OD-cgM" customClass="LoginTableViewController" customModule="MatZyp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="UQx-nA-dIU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="mYB-vc-p3k">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QEG-Mo-nm8">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QEG-Mo-nm8" id="T0t-KU-cn8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVf-Kg-l8A">
-                                                    <rect key="frame" x="39" y="11" width="73" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Sh2-9e-uxp">
-                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sh2-9e-uxp" id="hu8-8u-3tN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="언어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8j-az-Kz5">
-                                                    <rect key="frame" x="39" y="11" width="68" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="vb4-OD-cgM" id="flF-zQ-LlK"/>
-                            <outlet property="delegate" destination="vb4-OD-cgM" id="pFe-7d-PKG"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="brC-e8-plQ"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W8h-hj-4ZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1689" y="1021"/>
-        </scene>
-        <!--Setting-->
+        <!--설정-->
         <scene sceneID="JCj-h1-ogr">
             <objects>
                 <tableViewController id="nf2-TG-oHW" customClass="SettingController" customModule="MatZyp" customModuleProvider="target" sceneMemberID="viewController">
@@ -248,26 +189,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="p0x-Oa-wp5">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="언어 선택" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXK-7T-8Tz">
-                                    <rect key="frame" x="0.0" y="27" width="375" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                    <size key="shadowOffset" width="0.0" height="0.0"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" red="0.12941176470588237" green="0.5607843137254902" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
-                        </view>
                         <sections>
                             <tableViewSection id="Lm3-E7-J2K">
                                 <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="5QM-53-138">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5QM-53-138" id="Rru-tg-T3J">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="계정" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7Q-BI-n3A">
+                                                    <rect key="frame" x="15" y="0.0" width="321" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="76K-6C-r4N" kind="show" id="fNd-IM-eVu"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="한국어" id="x6K-YK-6DP">
-                                        <rect key="frame" x="0.0" y="65" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x6K-YK-6DP" id="byb-BR-0cR">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -292,7 +238,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="영어" id="MHK-KE-Ygo">
-                                        <rect key="frame" x="0.0" y="109" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MHK-KE-Ygo" id="c4n-T1-MLD">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -317,7 +263,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="중국어" id="F85-Oh-vC6">
-                                        <rect key="frame" x="0.0" y="153" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F85-Oh-vC6" id="qk8-O7-gaa">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -342,7 +288,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TPA-Th-t2E">
-                                        <rect key="frame" x="0.0" y="197" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="176" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TPA-Th-t2E" id="3bQ-Ss-YVq">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -368,7 +314,7 @@
                             <outlet property="delegate" destination="nf2-TG-oHW" id="XDT-k5-Yk7"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Setting" id="xdT-D6-PIM"/>
+                    <navigationItem key="navigationItem" title="설정" id="Dlo-5R-q2C"/>
                     <connections>
                         <outlet property="changeButton" destination="QVm-h4-a8W" id="QHL-V0-SoM"/>
                         <outlet property="check1" destination="ezY-hb-quc" id="V1m-w8-rKe"/>
@@ -378,7 +324,50 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5M8-SK-goN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="1414"/>
+            <point key="canvasLocation" x="2529" y="1504"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="SbK-Iz-2DI">
+            <objects>
+                <viewController id="76K-6C-r4N" customClass="LoginViewController" customModule="MatZyp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jTX-ou-FeP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tui-w0-YGk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Du9-dT-6GL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tce-g7-5C5">
+                                <rect key="frame" x="119" y="72" width="136" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaZ-NQ-p8K">
+                                <rect key="frame" x="52" y="206" width="264" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhv-yo-tkb">
+                                <rect key="frame" x="52" y="249" width="264" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="email" destination="dhv-yo-tkb" id="5i8-rk-9Kx"/>
+                        <outlet property="profileImage" destination="Tce-g7-5C5" id="Zsb-GN-yNh"/>
+                        <outlet property="userName" destination="aaZ-NQ-p8K" id="KQj-0n-hwk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JIq-GH-VeJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3285.5999999999999" y="1503.5982008995504"/>
         </scene>
         <!--Seg View Controller-->
         <scene sceneID="Poz-Ia-hgK">
@@ -419,7 +408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WOL-Cf-zG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4383.1999999999998" y="300.89955022488761"/>
+            <point key="canvasLocation" x="4098" y="-170"/>
         </scene>
         <!--Mat Zyp List View Controller-->
         <scene sceneID="hOR-Z2-elo">
@@ -488,7 +477,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQK-BG-DIV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3628" y="300.89955022488761"/>
+            <point key="canvasLocation" x="3338" y="-170"/>
         </scene>
         <!--지도-->
         <scene sceneID="UfE-Fi-bBH">
@@ -536,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcr-Nw-4Hm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2704.8000000000002" y="-1108.6956521739132"/>
+            <point key="canvasLocation" x="2529" y="680"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="Jo8-YX-yLd">
@@ -674,18 +663,21 @@
                 <exit id="5u1-eF-ZE2" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yqk-wm-Yum" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1769" y="-394"/>
+            <point key="canvasLocation" x="1039" y="-770"/>
         </scene>
-        <!--home-->
+        <!--지역-->
         <scene sceneID="yXG-uj-74N">
             <objects>
                 <navigationController id="060-oh-8rW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="home" image="B2532C51-96C1-4CCF-88A9-94B0C6D93D08" id="lZP-FU-QPQ"/>
+                    <tabBarItem key="tabBarItem" title="지역" image="LocationList" id="lZP-FU-QPQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Mh8-oq-gm6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="1UQ-6U-XnE" kind="relationship" relationship="rootViewController" id="9N8-Kn-b85"/>
@@ -693,7 +685,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUo-Lq-1aN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1688.8" y="300.89955022488761"/>
+            <point key="canvasLocation" x="1764" y="-170"/>
         </scene>
         <!--Review Table View Controller-->
         <scene sceneID="G1r-5I-god">
@@ -722,7 +714,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9iU-zh-6gQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4228" y="971"/>
+            <point key="canvasLocation" x="4782" y="618"/>
         </scene>
         <!--Menu-->
         <scene sceneID="gYZ-BY-9PX">
@@ -776,7 +768,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xbR-jM-WEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5167.1999999999998" y="300.89955022488761"/>
+            <point key="canvasLocation" x="4782" y="-78"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kgc-i5-GB5">
@@ -792,9 +784,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pgv-NG-Egc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-432"/>
+            <point key="canvasLocation" x="329" y="-770"/>
         </scene>
-        <!--지역 선택-->
+        <!--지역-->
         <scene sceneID="VHY-zt-Nmd">
             <objects>
                 <tableViewController storyboardIdentifier="LocationListView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1UQ-6U-XnE" customClass="LocationListViewController" customModule="MatZyp" customModuleProvider="target" sceneMemberID="viewController">
@@ -825,8 +817,7 @@
                     <toolbarItems>
                         <barButtonItem title="Set Langugae" id="zdQ-0r-ulp"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="지역 선택" id="d86-Fm-h5q">
-                        <barButtonItem key="backBarButtonItem" title="지역" id="mcS-3k-6Q0"/>
+                    <navigationItem key="navigationItem" title="지역" id="d86-Fm-h5q">
                         <barButtonItem key="rightBarButtonItem" image="Marker Filled-50" id="cxW-uA-qyQ">
                             <connections>
                                 <action selector="locationTurnOn:" destination="1UQ-6U-XnE" id="hCE-jZ-wGq"/>
@@ -836,18 +827,22 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQa-42-TBZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2674.4000000000001" y="300.89955022488761"/>
+            <point key="canvasLocation" x="2529" y="-170"/>
         </scene>
-        <!--Item-->
+        <!--지도-->
         <scene sceneID="kdj-kZ-WVh">
             <objects>
                 <navigationController storyboardIdentifier="GMapViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SJ6-gy-yHn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="cVe-Q0-9Wi"/>
+                    <tabBarItem key="tabBarItem" title="지도" image="GoogleMap" id="cVe-Q0-9Wi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="PVQ-ze-3XB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.1458417773" green="0.62847143409999995" blue="0.63451164959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -856,7 +851,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UP5-qh-gOG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1765.5999999999999" y="-1108.6956521739132"/>
+            <point key="canvasLocation" x="1764" y="680"/>
         </scene>
         <!--Write Review Table View Controller-->
         <scene sceneID="urP-B7-WiH">
@@ -915,7 +910,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SWR-B2-2D2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5744.8000000000002" y="968.36581709145435"/>
+            <point key="canvasLocation" x="6386" y="618"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7mb-5d-1Uh">
@@ -931,12 +926,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubm-tx-XsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4980" y="970"/>
+            <point key="canvasLocation" x="5577" y="618"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tabbar View Controller-->
         <scene sceneID="ZOV-hQ-TG5">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cbM-rh-id6" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cbM-rh-id6" customClass="TabbarViewController" customModule="MatZyp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="30p-aF-Q28">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -945,116 +940,49 @@
                     </tabBar>
                     <connections>
                         <segue destination="060-oh-8rW" kind="relationship" relationship="viewControllers" id="eGM-F4-ftQ"/>
-                        <segue destination="vb4-OD-cgM" kind="relationship" relationship="viewControllers" id="L6F-Pf-eve"/>
-                        <segue destination="nf2-TG-oHW" kind="relationship" relationship="viewControllers" id="ljo-3B-Zxf"/>
-                        <segue destination="SJ6-gy-yHn" kind="relationship" relationship="viewControllers" id="XHe-fE-BIW"/>
+                        <segue destination="SJ6-gy-yHn" kind="relationship" relationship="viewControllers" id="FRB-KL-ULq"/>
+                        <segue destination="Zxh-2g-e1j" kind="relationship" relationship="viewControllers" id="hqh-aS-jK5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2T-KE-Lur" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="300.89955022488761"/>
         </scene>
+        <!--설정-->
+        <scene sceneID="9b3-iS-e58">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zxh-2g-e1j" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="설정" image="Setting" id="xdT-D6-PIM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="X4e-9Y-gCw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nf2-TG-oHW" kind="relationship" relationship="rootViewController" id="Swi-7N-Tfg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i7k-ga-Yz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1764" y="1504"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="B2532C51-96C1-4CCF-88A9-94B0C6D93D08" width="25" height="25">
-            <mutableData key="keyedArchiveRepresentation">
-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
-AARsdHJUUgAAACIAAASQZmlGSQAAACgAAASyaHJIUgAAACgAAATacGxQTAAAACwAAAUCcnVSVQAAACIA
-AAUuYXJFRwAAACYAAAVQZW5VUwAAACYAAAV2AFYBYQBlAG8AYgBlAGMAbgD9ACAAUgBHAEIAIABwAHIA
-bwBmAGkAbABHAGUAbgBlAHIAZQBsACAAUgBHAEIALQBiAGUAcwBrAHIAaQB2AGUAbABzAGUAUABlAHIA
-ZgBpAGwAIABSAEcAQgAgAGcAZQBuAOgAcgBpAGMAQx6lAHUAIABoAOwAbgBoACAAUgBHAEIAIABDAGgA
-dQBuAGcAUABlAHIAZgBpAGwAIABSAEcAQgAgAEcAZQBuAOkAcgBpAGMAbwQXBDAEMwQwBDsETAQ9BDgE
-OQAgBD8EQAQ+BEQEMAQ5BDsAIABSAEcAQgBQAHIAbwBmAGkAbAAgAGcA6QBuAOkAcgBpAHEAdQBlACAA
-UgBWAEIAwQBsAHQAYQBsAOEAbgBvAHMAIABSAEcAQgAgAHAAcgBvAGYAaQBskBp1KAAgAFIARwBCACCC
-cl9pY8+P8ABHAGUAbgBlAHIAaQBzAGsAIABSAEcAQgAtAHAAcgBvAGYAaQBsAE8AYgBlAGMAbgD9ACAA
-UgBHAEIAIABwAHIAbwBmAGkAbAXkBegF1QXkBdkF3AAgAFIARwBCACAF2wXcBdwF2QBQAHIAbwBmAGkA
-bABvACAAUgBHAEIAIABnAGUAbgBlAHIAaQBjAG8AUAByAG8AZgBpAGwAIABSAEcAQgAgAGcAZQBuAGUA
-cgBpAGMAQQBsAGwAZwBlAG0AZQBpAG4AZQBzACAAUgBHAEIALQBQAHIAbwBmAGkAbMd8vBgAIABSAEcA
-QgAg1QS4XNMMx3xmbpAaACAAUgBHAEIAIGPPj/Blh072TgCCLAAgAFIARwBCACAw1zDtMNUwoTCkMOsD
-kwO1A70DuQO6A8wAIAPAA8EDvwPGA68DuwAgAFIARwBCAFAAZQByAGYAaQBsACAAUgBHAEIAIABnAGUA
-bgDpAHIAaQBjAG8AQQBsAGcAZQBtAGUAZQBuACAAUgBHAEIALQBwAHIAbwBmAGkAZQBsDkIOGw4jDkQO
-Hw4lDkwAIABSAEcAQgAgDhcOMQ5IDicORA4bAEcAZQBuAGUAbAAgAFIARwBCACAAUAByAG8AZgBpAGwA
-aQBZAGwAZQBpAG4AZQBuACAAUgBHAEIALQBwAHIAbwBmAGkAaQBsAGkARwBlAG4AZQByAGkBDQBrAGkA
-IABSAEcAQgAgAHAAcgBvAGYAaQBsAFUAbgBpAHcAZQByAHMAYQBsAG4AeQAgAHAAcgBvAGYAaQBsACAA
-UgBHAEIEHgQxBEkEOAQ5ACAEPwRABD4ERAQ4BDsETAAgAFIARwBCBkUGRAZBACAGKgY5BjEGSgZBACAA
-UgBHAEIAIAYnBkQGOQYnBkUARwBlAG4AZQByAGkAYwAgAFIARwBCACAAUAByAG8AZgBpAGwAZXRleHQA
-AAAAQ29weXJpZ2h0IDIwMDcgQXBwbGUgSW5jLiwgYWxsIHJpZ2h0cyByZXNlcnZlZC4AWFlaIAAAAAAA
-APNSAAEAAAABFs9YWVogAAAAAAAAdE0AAD3uAAAD0FhZWiAAAAAAAABadQAArHMAABc0WFlaIAAAAAAA
-ACgaAAAVnwAAuDZjdXJ2AAAAAAAAAAEBzQAAc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeSAAD9kf//+6L/
-//2jAAAD3AAAwGzSJSYnKFokY2xhc3NuYW1lWCRjbGFzc2VzXxAQTlNCaXRtYXBJbWFnZVJlcKMnKSpa
-TlNJbWFnZVJlcFhOU09iamVjdNIlJiwtV05TQXJyYXmiLCrSJSYvMF5OU011dGFibGVBcnJheaMvLCrT
-MjMKNDU2V05TV2hpdGVcTlNDb2xvclNwYWNlRDAgMAAQA4AM0iUmODlXTlNDb2xvcqI4KtIlJjs8V05T
-SW1hZ2WiOypfEA9OU0tleWVkQXJjaGl2ZXLRP0BUcm9vdIABAAgAEQAaACMALQAyADcARgBMAFcAXgBl
-AHIAeQCBAIMAhQCKAIwAjgCXAJwApwCpAKsArQCyALUAtwC5ALsAvQDCANkA2wDdE0MTSBNTE1wTbxNz
-E34ThxOME5QTlxOcE6sTrxO2E74TyxPQE9IT1BPZE+ET5BPpE/ET9BQGFAkUDgAAAAAAAAIBAAAAAAAA
-AEEAAAAAAAAAAAAAAAAAABQQA
-</mutableData>
-        </image>
+        <image name="GoogleMap" width="25" height="25"/>
         <image name="Homepage_" width="25" height="25"/>
         <image name="Info_" width="25" height="25"/>
+        <image name="LocationList" width="25" height="25"/>
         <image name="Location_" width="25" height="25"/>
         <image name="Marker Filled-50" width="25" height="25"/>
         <image name="Menu_" width="25" height="25"/>
         <image name="Phone_" width="25" height="25"/>
+        <image name="Setting" width="25" height="25"/>
         <image name="Time_" width="25" height="25"/>
     </resources>
 </document>

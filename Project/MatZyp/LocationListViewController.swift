@@ -22,6 +22,7 @@ class LocationListViewController: UITableViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = self.tabBarController?.tabBar.items?[0].title
         tableView.reloadData()
     }
 /*

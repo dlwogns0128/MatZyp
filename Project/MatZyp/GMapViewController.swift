@@ -12,6 +12,10 @@ import GooglePlaces
 
 class GMapViewController: UIViewController, GMSMapViewDelegate, UISearchBarDelegate, LocateOnTheMap, GMSAutocompleteFetcherDelegate, CLLocationManagerDelegate{
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = self.tabBarController?.tabBar.items?[1].title
+    }
     /**
      * Called when an autocomplete request returns an error.
      * @param error the error that was received.
