@@ -269,7 +269,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chinese" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Doq-7X-aS8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="汉语" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Doq-7X-aS8">
                                                     <rect key="frame" x="15" y="0.0" width="321" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -297,12 +297,18 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVm-h4-a8W">
                                                     <rect key="frame" x="9" y="6" width="366" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Change Language"/>
                                                     <connections>
                                                         <action selector="changeLanguage:" destination="nf2-TG-oHW" eventType="touchUpInside" id="6pk-Wr-8DW"/>
                                                         <action selector="languageDone:" destination="FcT-bI-nX9" eventType="touchUpInside" id="kwg-iX-fpW"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGM-Sz-lAi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.049082893680000003" green="0.14640137759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -316,7 +322,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="설정" id="Dlo-5R-q2C"/>
                     <connections>
+                        <outlet property="accountLabel" destination="i7Q-BI-n3A" id="JhV-Fs-9Gz"/>
                         <outlet property="changeButton" destination="QVm-h4-a8W" id="QHL-V0-SoM"/>
+                        <outlet property="changeButtonLabel" destination="HGM-Sz-lAi" id="gLN-ek-g9C"/>
                         <outlet property="check1" destination="ezY-hb-quc" id="V1m-w8-rKe"/>
                         <outlet property="check2" destination="Crd-7H-FXl" id="5Y4-cb-KVe"/>
                         <outlet property="check3" destination="sIy-5g-HRd" id="Ijs-mS-eCV"/>
@@ -324,7 +332,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5M8-SK-goN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2529" y="1504"/>
+            <point key="canvasLocation" x="2528.8000000000002" y="1503.5982008995504"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="SbK-Iz-2DI">
