@@ -76,6 +76,7 @@ class ReviewTableViewController: UITableViewController {
 //        cell.userName
         cell.userReview.text = review.text.text
         cell.date.text = review.date.description
+        cell.foodImage.image = review.image
         
         
     

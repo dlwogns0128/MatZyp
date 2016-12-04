@@ -72,16 +72,15 @@ class WriteReviewTableViewController: UITableViewController, UITextViewDelegate,
         dismiss(animated: true, completion: nil)
     }
     
-    private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        // The info dictionary contains multiple representations of the image, and this uses the original.
-        if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            // Set photoImageView to display the selected image.
-            userImage.image = selectedImage
-        }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        userImage.image = selectedImage
         
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
     }
+    
     
     @IBAction func saveClick(_ sender: Any) {
         guard let review = makeReview() else {
