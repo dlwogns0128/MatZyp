@@ -10,6 +10,11 @@ import UIKit
 
 class WriteReviewTableViewController: UITableViewController {
 
+    @IBOutlet weak var rating: RatingControl!
+    @IBOutlet weak var userReview: UITextView!
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var imageButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,14 +24,64 @@ class WriteReviewTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func makeReview() -> Review? {
+        let review = Review()
+
+        if userReview.text.isEmpty {
+            print("empty")
+            return nil
+        } else {
+            review.text = userReview.text
+        }
+
+        if let temp = userImage.image {
+            review.image = temp
+        }
+        
+        return review
+    }
+    @IBAction func pickImage(_ sender: Any) {
+    }
+    
+    @IBAction func saveClick(_ sender: Any) {
+        guard let review = makeReview() else {
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+        
+        switch self.presentingViewController {
+            case let tabBarC as UITabBarController:
+                if let navigationC = tabBarC.selectedViewController as? UINavigationController, let segviewC = navigationC.topViewController as? SegViewController, let reviewC = segviewC.currentViewController as? ReviewTableViewController {
+                    reviewC.addNewReview(review: review)
+                    }
+            case let navigationC as UINavigationController:
+                if let segviewC = navigationC.topViewController as? SegViewController, let reviewC = segviewC.currentViewController as? ReviewTableViewController {
+                    reviewC.addNewReview(review: review)
+                    }
+            case let reviewC as ReviewTableViewController:
+                reviewC.addNewReview(review: review)
+            default:
+                break
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func cancelClick(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+
 
     // MARK: - Table view data source
-
+/*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -48,7 +103,7 @@ class WriteReviewTableViewController: UITableViewController {
         }
         
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.

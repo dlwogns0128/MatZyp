@@ -12,7 +12,7 @@ class ReviewTableViewController: UITableViewController {
 
     var matzyp:Matzyp?
     var setting:Setting?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,28 +45,43 @@ class ReviewTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func addNewReview(review: Review) {
+        self.matzyp?.reviews.append(review)
+        
+        self.tableView.reloadData()
+        
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        guard let row_count = matzyp?.reviews.count else {
+            return 0
+        }
+        return row_count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! ReviewTableViewCell
 
-        // Configure the cell...
+        guard let review = matzyp?.reviews[indexPath.row] else {
+            return cell
+        }
+//        cell.userName
+        cell.userReview.text = review.text
+        cell.date.text = review.date.description
+        
+    
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
