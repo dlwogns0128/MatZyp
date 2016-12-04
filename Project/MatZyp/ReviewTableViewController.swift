@@ -48,7 +48,7 @@ class ReviewTableViewController: UITableViewController {
     
     func addNewReview(review: Review) {
         self.matzyp?.reviews.append(review)
-        
+        self.matzyp?.GetRate()
         self.tableView.reloadData()
         
     }
@@ -73,13 +73,12 @@ class ReviewTableViewController: UITableViewController {
         guard let review = matzyp?.reviews[indexPath.row] else {
             return cell
         }
+        
 //        cell.userName
         cell.userReview.text = review.text.text
         cell.date.text = review.date.description
         cell.foodImage.image = review.image
-        
-        
-    
+        cell.rating.rating = review.rate
 
         return cell
     }

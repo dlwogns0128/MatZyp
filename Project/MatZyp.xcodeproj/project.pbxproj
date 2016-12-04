@@ -39,7 +39,7 @@
 		B2D31FE31DE739E9000513B4 /* WriteReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D31FE21DE739E9000513B4 /* WriteReviewTableViewController.swift */; };
 		B2D31FE91DE7434E000513B4 /* customSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D31FE81DE7434E000513B4 /* customSegmentedControl.swift */; };
 		B2D31FEB1DE767FE000513B4 /* ThirdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D31FEA1DE767FE000513B4 /* ThirdCell.swift */; };
-		B2DEBB2D1DDEE0710036CEB8 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DEBB2C1DDEE0710036CEB8 /* RatingControl.swift */; };
+		B2DF22321DF44E96001308DA /* rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF22311DF44E96001308DA /* rating.swift */; };
 		CE16A1171DE0663E00DED5E7 /* GMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A1161DE0663E00DED5E7 /* GMapViewController.swift */; };
 		CEADF87C1DE827940015FC0A /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEADF87B1DE827940015FC0A /* SearchResultController.swift */; };
 		CEB7CBE71DE065F2000D8A2E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CEB7CBE61DE065F2000D8A2E /* Podfile */; };
@@ -84,7 +84,7 @@
 		B2D31FE21DE739E9000513B4 /* WriteReviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteReviewTableViewController.swift; sourceTree = "<group>"; };
 		B2D31FE81DE7434E000513B4 /* customSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customSegmentedControl.swift; sourceTree = "<group>"; };
 		B2D31FEA1DE767FE000513B4 /* ThirdCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdCell.swift; sourceTree = "<group>"; };
-		B2DEBB2C1DDEE0710036CEB8 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		B2DF22311DF44E96001308DA /* rating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rating.swift; sourceTree = "<group>"; };
 		CE16A1161DE0663E00DED5E7 /* GMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMapViewController.swift; sourceTree = "<group>"; };
 		CEADF87B1DE827940015FC0A /* SearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResultController.swift; path = ../SearchResultController.swift; sourceTree = "<group>"; };
 		CEB7CBE61DE065F2000D8A2E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -178,8 +178,8 @@
 			children = (
 				B24318151DE02E2B005F9317 /* ReviewTableViewController.swift */,
 				B2D31FE21DE739E9000513B4 /* WriteReviewTableViewController.swift */,
-				B2DEBB2C1DDEE0710036CEB8 /* RatingControl.swift */,
 				B20AF2B31DF2B02E00B4730F /* ReviewTableViewCell.swift */,
+				B2DF22311DF44E96001308DA /* rating.swift */,
 			);
 			name = ReviewView;
 			sourceTree = "<group>";
@@ -369,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2DF22321DF44E96001308DA /* rating.swift in Sources */,
 				B2C84D461DEDC85600BE7049 /* LoginViewController.swift in Sources */,
 				B26395C81DD8A9F40046952F /* MatZypListTableViewCell.swift in Sources */,
 				B2D31FE31DE739E9000513B4 /* WriteReviewTableViewController.swift in Sources */,
@@ -376,7 +377,6 @@
 				36CE29851DC869140087F8F3 /* DataCenter.swift in Sources */,
 				B2D31FEB1DE767FE000513B4 /* ThirdCell.swift in Sources */,
 				B268B6D31DD76A3A00737189 /* MenuCell.swift in Sources */,
-				B2DEBB2D1DDEE0710036CEB8 /* RatingControl.swift in Sources */,
 				36D159B31DD0DE47007B4EAA /* LocationListViewController.swift in Sources */,
 				B24318161DE02E2B005F9317 /* ReviewTableViewController.swift in Sources */,
 				CE16A1171DE0663E00DED5E7 /* GMapViewController.swift in Sources */,
