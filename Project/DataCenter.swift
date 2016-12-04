@@ -115,14 +115,14 @@ class Menu {
 
 class Review {
     var Id: String
-    var text: String
+    var text: UITextView
     var date: String
     var rate: Float
     var image: UIImage?
     
     init() {
         self.Id = "NoName"
-        self.text = ""
+        self.text = UITextView()
         let format = DateFormatter()
         format.locale = NSLocale(localeIdentifier: "ko_kr") as Locale!
         format.timeZone = NSTimeZone(name: "KST") as TimeZone!
@@ -132,6 +132,14 @@ class Review {
     }
 }
 
+class User {
+    var id: String
+    var profileImage: UIImage?
+    
+    init() {
+        self.id = ""
+    }
+}
 let dataCenter:DataCenter = DataCenter()
 class DataCenter {
     var setting:Setting

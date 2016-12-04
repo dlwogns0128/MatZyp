@@ -74,8 +74,9 @@ class ReviewTableViewController: UITableViewController {
             return cell
         }
 //        cell.userName
-        cell.userReview.text = review.text
+        cell.userReview.text = review.text.text
         cell.date.text = review.date.description
+        
         
     
 

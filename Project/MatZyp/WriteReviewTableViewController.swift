@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WriteReviewTableViewController: UITableViewController {
+class WriteReviewTableViewController: UITableViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var rating: RatingControl!
     @IBOutlet weak var userReview: UITextView!
@@ -17,17 +17,22 @@ class WriteReviewTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        userReview.textContainer.maximumNumberOfLines = 3
+        userReview.textContainer.lineBreakMode = .byWordWrapping
+        userReview.delegate = self
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: #selector(WriteReviewTableViewController.tap))
+        self.view.addGestureRecognizer(tapRecognizer)
     }
-    
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //Hide keyboard
+    func tap(gesture: UITapGestureRecognizer) {
+        userReview.resignFirstResponder()
     }
     
     func makeReview() -> Review? {
@@ -37,7 +42,7 @@ class WriteReviewTableViewController: UITableViewController {
             print("empty")
             return nil
         } else {
-            review.text = userReview.text
+            review.text.text = userReview.text
         }
 
         if let temp = userImage.image {
@@ -47,6 +52,35 @@ class WriteReviewTableViewController: UITableViewController {
         return review
     }
     @IBAction func pickImage(_ sender: Any) {
+        // Hide the keyboard.
+        userReview.resignFirstResponder()
+        
+        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
+        let imagePickerController = UIImagePickerController()
+        
+        // Only allow photos to be picked, not taken.
+        imagePickerController.sourceType = .photoLibrary
+        
+        // Make sure ViewController is notified when the user picks an image.
+        imagePickerController.delegate = self
+        
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        // Dismiss the picker if the user canceled.
+        dismiss(animated: true, completion: nil)
+    }
+    
+    private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        // The info dictionary contains multiple representations of the image, and this uses the original.
+        if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            // Set photoImageView to display the selected image.
+            userImage.image = selectedImage
+        }
+        
+        // Dismiss the picker.
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func saveClick(_ sender: Any) {
