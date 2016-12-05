@@ -62,7 +62,6 @@ class SegViewController: UIViewController {
             self.contentView.addSubview(vc.view)
             self.currentViewController = vc
             vc.viewWillAppear(true)
-            
         }
     }
     

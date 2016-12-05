@@ -17,6 +17,7 @@
 		36CE63EE1DD6F06000F73C7E /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE63ED1DD6F06000F73C7E /* SettingController.swift */; };
 		36D159B31DD0DE47007B4EAA /* LocationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D159B21DD0DE47007B4EAA /* LocationListViewController.swift */; };
 		36D159B51DD0DE5B007B4EAA /* MenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D159B41DD0DE5B007B4EAA /* MenuListViewController.swift */; };
+		B20AF2B41DF2B02E00B4730F /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20AF2B31DF2B02E00B4730F /* ReviewTableViewCell.swift */; };
 		B241D1491DE45227008348FF /* SegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241D1481DE45227008348FF /* SegViewController.swift */; };
 		B24318161DE02E2B005F9317 /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24318151DE02E2B005F9317 /* ReviewTableViewController.swift */; };
 		B26395C81DD8A9F40046952F /* MatZypListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26395C71DD8A9F40046952F /* MatZypListTableViewCell.swift */; };
@@ -36,10 +37,9 @@
 		B2D01BA71DEC77BA0092050F /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D01BA31DEC77BA0092050F /* FBSDKLoginKit.framework */; };
 		B2D01BA81DEC77BA0092050F /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D01BA41DEC77BA0092050F /* FBSDKShareKit.framework */; };
 		B2D31FE31DE739E9000513B4 /* WriteReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D31FE21DE739E9000513B4 /* WriteReviewTableViewController.swift */; };
-		B2D31FE51DE73C99000513B4 /* WriteReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D31FE41DE73C99000513B4 /* WriteReviewTableViewCell.swift */; };
 		B2D31FE91DE7434E000513B4 /* customSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D31FE81DE7434E000513B4 /* customSegmentedControl.swift */; };
 		B2D31FEB1DE767FE000513B4 /* ThirdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D31FEA1DE767FE000513B4 /* ThirdCell.swift */; };
-		B2DEBB2D1DDEE0710036CEB8 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DEBB2C1DDEE0710036CEB8 /* RatingControl.swift */; };
+		B2DF22321DF44E96001308DA /* rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF22311DF44E96001308DA /* rating.swift */; };
 		CE16A1171DE0663E00DED5E7 /* GMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A1161DE0663E00DED5E7 /* GMapViewController.swift */; };
 		CEADF87C1DE827940015FC0A /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEADF87B1DE827940015FC0A /* SearchResultController.swift */; };
 		CEB7CBE71DE065F2000D8A2E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CEB7CBE61DE065F2000D8A2E /* Podfile */; };
@@ -60,6 +60,7 @@
 		36D159B21DD0DE47007B4EAA /* LocationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
 		36D159B41DD0DE5B007B4EAA /* MenuListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListViewController.swift; sourceTree = "<group>"; };
 		6E0E8C36BE4828F6B76B5EAB /* libPods-MatZyp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MatZyp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B20AF2B31DF2B02E00B4730F /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		B241D1481DE45227008348FF /* SegViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegViewController.swift; sourceTree = "<group>"; };
 		B24318151DE02E2B005F9317 /* ReviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
 		B26395C71DD8A9F40046952F /* MatZypListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatZypListTableViewCell.swift; sourceTree = "<group>"; };
@@ -81,10 +82,9 @@
 		B2D01BA41DEC77BA0092050F /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		B2D01BAB1DEC7EE60092050F /* MatZyp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MatZyp.entitlements; sourceTree = "<group>"; };
 		B2D31FE21DE739E9000513B4 /* WriteReviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteReviewTableViewController.swift; sourceTree = "<group>"; };
-		B2D31FE41DE73C99000513B4 /* WriteReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteReviewTableViewCell.swift; sourceTree = "<group>"; };
 		B2D31FE81DE7434E000513B4 /* customSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customSegmentedControl.swift; sourceTree = "<group>"; };
 		B2D31FEA1DE767FE000513B4 /* ThirdCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdCell.swift; sourceTree = "<group>"; };
-		B2DEBB2C1DDEE0710036CEB8 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		B2DF22311DF44E96001308DA /* rating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rating.swift; sourceTree = "<group>"; };
 		CE16A1161DE0663E00DED5E7 /* GMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMapViewController.swift; sourceTree = "<group>"; };
 		CEADF87B1DE827940015FC0A /* SearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResultController.swift; path = ../SearchResultController.swift; sourceTree = "<group>"; };
 		CEB7CBE61DE065F2000D8A2E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -178,8 +178,8 @@
 			children = (
 				B24318151DE02E2B005F9317 /* ReviewTableViewController.swift */,
 				B2D31FE21DE739E9000513B4 /* WriteReviewTableViewController.swift */,
-				B2DEBB2C1DDEE0710036CEB8 /* RatingControl.swift */,
-				B2D31FE41DE73C99000513B4 /* WriteReviewTableViewCell.swift */,
+				B20AF2B31DF2B02E00B4730F /* ReviewTableViewCell.swift */,
+				B2DF22311DF44E96001308DA /* rating.swift */,
 			);
 			name = ReviewView;
 			sourceTree = "<group>";
@@ -369,15 +369,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2DF22321DF44E96001308DA /* rating.swift in Sources */,
 				B2C84D461DEDC85600BE7049 /* LoginViewController.swift in Sources */,
 				B26395C81DD8A9F40046952F /* MatZypListTableViewCell.swift in Sources */,
 				B2D31FE31DE739E9000513B4 /* WriteReviewTableViewController.swift in Sources */,
-				B2D31FE51DE73C99000513B4 /* WriteReviewTableViewCell.swift in Sources */,
 				B2AEF5B91DCF21BA009A0476 /* MatZypListViewController.swift in Sources */,
 				36CE29851DC869140087F8F3 /* DataCenter.swift in Sources */,
 				B2D31FEB1DE767FE000513B4 /* ThirdCell.swift in Sources */,
 				B268B6D31DD76A3A00737189 /* MenuCell.swift in Sources */,
-				B2DEBB2D1DDEE0710036CEB8 /* RatingControl.swift in Sources */,
 				36D159B31DD0DE47007B4EAA /* LocationListViewController.swift in Sources */,
 				B24318161DE02E2B005F9317 /* ReviewTableViewController.swift in Sources */,
 				CE16A1171DE0663E00DED5E7 /* GMapViewController.swift in Sources */,
@@ -386,6 +385,7 @@
 				B2BA89A41DD86B5500FC0C13 /* FirstCell.swift in Sources */,
 				36D159B51DD0DE5B007B4EAA /* MenuListViewController.swift in Sources */,
 				B2C84D481DEDD1C800BE7049 /* TabbarViewController.swift in Sources */,
+				B20AF2B41DF2B02E00B4730F /* ReviewTableViewCell.swift in Sources */,
 				B241D1491DE45227008348FF /* SegViewController.swift in Sources */,
 				36CE63EE1DD6F06000F73C7E /* SettingController.swift in Sources */,
 				B2BA89A81DD881EB00FC0C13 /* SecondCell.swift in Sources */,

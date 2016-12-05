@@ -8,25 +8,120 @@
 
 import UIKit
 
-class WriteReviewTableViewController: UITableViewController {
+class WriteReviewTableViewController: UITableViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    
+    @IBOutlet weak var rating: CosmosView!
+    @IBOutlet weak var userReview: UITextView!
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var imageButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        userReview.textContainer.maximumNumberOfLines = 3
+        userReview.textContainer.lineBreakMode = .byWordWrapping
+        let keyboardDoneButtonView = UIToolbar.init()
+        keyboardDoneButtonView.sizeToFit()
+        let emptyButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(WriteReviewTableViewController.tap))
+        
+        keyboardDoneButtonView.items = [emptyButton, doneButton]
+        userReview.inputAccessoryView = keyboardDoneButtonView
+        userReview.delegate = self
     }
-
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //Hide keyboard
+    func tap() {
+        userReview.resignFirstResponder()
+    }
+    
+    func makeReview() -> Review? {
+        let review = Review()
+
+        if userReview.text.isEmpty {
+            print("empty")
+            return nil
+        } else {
+            review.text.text = userReview.text
+        }
+
+        if let temp = userImage.image {
+            review.image = temp
+        }
+        
+        review.rate = rating.rating
+        
+        return review
+    }
+    @IBAction func pickImage(_ sender: Any) {
+        // Hide the keyboard.
+        userReview.resignFirstResponder()
+        
+        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
+        let imagePickerController = UIImagePickerController()
+        
+        // Only allow photos to be picked, not taken.
+        imagePickerController.sourceType = .photoLibrary
+        
+        // Make sure ViewController is notified when the user picks an image.
+        imagePickerController.delegate = self
+        
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        // Dismiss the picker if the user canceled.
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        userImage.image = selectedImage
+        
+        // Dismiss the picker.
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func saveClick(_ sender: Any) {
+        guard let review = makeReview() else {
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+        
+        switch self.presentingViewController {
+            case let tabBarC as UITabBarController:
+                if let navigationC = tabBarC.selectedViewController as? UINavigationController, let segviewC = navigationC.topViewController as? SegViewController, let reviewC = segviewC.currentViewController as? ReviewTableViewController {
+                    reviewC.addNewReview(review: review)
+                    }
+            case let navigationC as UINavigationController:
+                if let segviewC = navigationC.topViewController as? SegViewController, let reviewC = segviewC.currentViewController as? ReviewTableViewController {
+                    reviewC.addNewReview(review: review)
+                    }
+            case let reviewC as ReviewTableViewController:
+                reviewC.addNewReview(review: review)
+            default:
+                break
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func cancelClick(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+
 
     // MARK: - Table view data source
-
+/*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -48,7 +143,7 @@ class WriteReviewTableViewController: UITableViewController {
         }
         
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
