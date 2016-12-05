@@ -10,7 +10,8 @@ import UIKit
 
 class WriteReviewTableViewController: UITableViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var rating: RatingControl!
+    
+    @IBOutlet weak var rating: CosmosView!
     @IBOutlet weak var userReview: UITextView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var imageButton: UIButton!
@@ -19,10 +20,14 @@ class WriteReviewTableViewController: UITableViewController, UITextViewDelegate,
         super.viewDidLoad()
         userReview.textContainer.maximumNumberOfLines = 3
         userReview.textContainer.lineBreakMode = .byWordWrapping
+        let keyboardDoneButtonView = UIToolbar.init()
+        keyboardDoneButtonView.sizeToFit()
+        let emptyButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(WriteReviewTableViewController.tap))
+        
+        keyboardDoneButtonView.items = [emptyButton, doneButton]
+        userReview.inputAccessoryView = keyboardDoneButtonView
         userReview.delegate = self
-        let tapRecognizer = UITapGestureRecognizer()
-        tapRecognizer.addTarget(self, action: #selector(WriteReviewTableViewController.tap))
-        self.view.addGestureRecognizer(tapRecognizer)
     }
  
     override func didReceiveMemoryWarning() {
@@ -31,7 +36,7 @@ class WriteReviewTableViewController: UITableViewController, UITextViewDelegate,
     }
     
     //Hide keyboard
-    func tap(gesture: UITapGestureRecognizer) {
+    func tap() {
         userReview.resignFirstResponder()
     }
     
@@ -48,6 +53,8 @@ class WriteReviewTableViewController: UITableViewController, UITextViewDelegate,
         if let temp = userImage.image {
             review.image = temp
         }
+        
+        review.rate = rating.rating
         
         return review
     }
@@ -72,16 +79,15 @@ class WriteReviewTableViewController: UITableViewController, UITextViewDelegate,
         dismiss(animated: true, completion: nil)
     }
     
-    private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        // The info dictionary contains multiple representations of the image, and this uses the original.
-        if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            // Set photoImageView to display the selected image.
-            userImage.image = selectedImage
-        }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        userImage.image = selectedImage
         
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
     }
+    
     
     @IBAction func saveClick(_ sender: Any) {
         guard let review = makeReview() else {

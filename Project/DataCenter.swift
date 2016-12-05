@@ -51,7 +51,7 @@ class Matzyp {
     var main_img: UIImage?
     var img : UIImage?
     var menus : [Menu]? //Menu class
-    var rate : Float = 0.0
+    var rate : Double = 0.0
     var reviews: [Review] = []
     
     init(name:[Language:String]) {
@@ -86,9 +86,14 @@ class Matzyp {
     }
     
     /* Calculate current rate
-        @param[in] grade input grade */
-    func GetRate(grade : Float) {
-        rate = (rate + grade) / 2
+    */
+    func GetRate() {
+        var temp = 0.0
+        for i in self.reviews {
+            temp += i.rate
+        }
+        
+        self.rate = temp / Double(self.reviews.count)
     }
     
     func setLang (lang:Int)
@@ -117,7 +122,7 @@ class Review {
     var Id: String
     var text: UITextView
     var date: String
-    var rate: Float
+    var rate: Double
     var image: UIImage?
     
     init() {

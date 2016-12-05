@@ -76,7 +76,7 @@ class MatZypListViewController: UITableViewController {
         cell.NameLabel.text = matzyp.name[(setting?.getLanguage())!]
         cell.TimeLabel.text = matzyp.business_hour
         cell.layer.cornerRadius = 8
-
+        cell.rating.rating = matzyp.rate
         return cell
     }
     
