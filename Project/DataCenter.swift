@@ -46,18 +46,18 @@ class Matzyp {
     var location : String
     var latitude : Double
     var longitude : Double
-    var homepage : String? = nil
+    var homepage : String?
     var business_hour : String
-    var main_img: UIImage? = nil
-    var img : UIImage? = nil
-    var menus : [Menu]?  = nil//Menu class
+    var main_img: UIImage?
+    var img : UIImage?
+    var menus : [Menu]? //Menu class
     var rate : Float = 0.0
+    var reviews: [Review] = []
     
     init(name:[Language:String]) {
         self.name = name
         self.number = ""
         self.location = ""
-        self.homepage = nil
         self.business_hour = ""
         self.region = ""
         self.latitude = 0.0
@@ -113,7 +113,33 @@ class Menu {
     }
 }
 
+class Review {
+    var Id: String
+    var text: UITextView
+    var date: String
+    var rate: Float
+    var image: UIImage?
+    
+    init() {
+        self.Id = "NoName"
+        self.text = UITextView()
+        let format = DateFormatter()
+        format.locale = NSLocale(localeIdentifier: "ko_kr") as Locale!
+        format.timeZone = NSTimeZone(name: "KST") as TimeZone!
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        self.date = format.string(from: NSDate() as Date)
+        self.rate = 0.0
+    }
+}
 
+class User {
+    var id: String
+    var profileImage: UIImage?
+    
+    init() {
+        self.id = ""
+    }
+}
 let dataCenter:DataCenter = DataCenter()
 class DataCenter {
     var setting:Setting

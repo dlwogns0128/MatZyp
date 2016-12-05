@@ -1,16 +1,21 @@
 //
-//  WriteReviewTableViewCell.swift
+//  ReviewTableViewCell.swift
 //  MatZyp
 //
-//  Created by archane on 2016. 11. 25..
+//  Created by archane on 2016. 12. 3..
 //  Copyright © 2016년 CodersHigh. All rights reserved.
 //
 
 import UIKit
 
-class WriteReviewTableViewCell: UITableViewCell {
+class ReviewTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var ratingControl: RatingControl!
+    @IBOutlet weak var foodImage: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var rating: UIImageView!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var userReview: UITextView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
