@@ -15,10 +15,6 @@ class MenuListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
@@ -30,6 +26,7 @@ class MenuListViewController: UITableViewController {
             self.tableView.contentInset = UIEdgeInsets(top: y,left: 0,bottom: 0,right: 0)
         }
     }
+ 
     /* Hide navigation tab only when screen is top*/
     /*
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

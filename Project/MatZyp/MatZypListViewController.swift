@@ -8,11 +8,13 @@
 
 import UIKit
 
-class MatZypListViewController: UITableViewController {
+class MatZypListViewController: UITableViewController, UIViewControllerPreviewingDelegate {
     
     
     var location:Location?
     var setting:Setting?
+//    let translator = Polyglot(clientId: "MatZyp", clientSecret: "dlwognsqkrruddnjsrkdwnsah")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +26,36 @@ class MatZypListViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.title = location?.name[(setting?.getLanguage())!]
+        registerForPreviewing(with: self, sourceView: view)
         //self.navigationItem.title = "\(location!.name[0]) 정보"
         //타이틀은 네비게이션 아이템의 타이틀이 없을 경우 뷰 컨트롤러의 타이틀을 자동으로 사용
         
     }
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location_: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = tableView.indexPathForRow(at: location_),
+            let cell = tableView.cellForRow(at: indexPath) else {
+                return nil }
+        
+        guard let detailViewController =
+            storyboard?.instantiateViewController(
+                withIdentifier: "Menu") as?
+            MenuListViewController else { return nil }
+        
+        detailViewController.matzyp = location?.matzyps?[indexPath.section]
+        detailViewController.setting = setting
+        
+        previewingContext.sourceRect = cell.frame
+        
+        return detailViewController
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        
+        show(viewControllerToCommit, sender: self)
+
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
         self.title = location?.name[(setting?.getLanguage())!]
@@ -38,6 +66,9 @@ class MatZypListViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -75,6 +106,7 @@ class MatZypListViewController: UITableViewController {
         cell.MainImageView.image = matzyp.main_img
         cell.NameLabel.text = matzyp.name[(setting?.getLanguage())!]
         cell.TimeLabel.text = matzyp.business_hour
+        cell.reviewCount.text = String(matzyp.reviews.count)
         cell.layer.cornerRadius = 8
         cell.rating.rating = matzyp.rate
         return cell

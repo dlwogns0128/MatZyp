@@ -10,10 +10,12 @@ import UIKit
 
 class MatZypListTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var reviewCount: UILabel!
     @IBOutlet weak var MainImageView: UIImageView!
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var TimeLabel: UILabel!
     @IBOutlet weak var rating: CosmosView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

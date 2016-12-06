@@ -56,23 +56,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             
             do {
                 let data = try Data(contentsOf: profileURL)
-                self.profileImage.image = UIImage(data: data)
+                self.profileImage.image = UIImage(data:data)
             } catch{}
             
-            /*
-            if (error == nil) {
-                self.dict = result as! [String: AnyObject]
-                let result = self.dict as NSDictionary
-                let id = result.value(forKey: "id") as! String
-                let name = result.value(forKey: "name") as! String
-                let profileURL = NSURL(string: "https://graph.facebook.com/\(id)/picture?type=large")
-                
-                if let data = NSData(contentsOf: profileURL! as URL) {
-                    self.profileImage.image = UIImage(data: data as Data)
-                }
-                self.userName.text = name
-            }*/
-            
+            let user = User()
+            user.id = id
+            user.name = name
+            user.profileImage = self.profileImage.image
+            dataCenter.user = user
         })
     }
     
@@ -83,6 +74,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("log out")
+        dataCenter.user = nil
     }
     
     func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {

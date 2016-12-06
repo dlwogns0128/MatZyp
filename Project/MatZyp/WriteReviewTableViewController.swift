@@ -14,12 +14,15 @@ class WriteReviewTableViewController: UITableViewController, UITextViewDelegate,
     @IBOutlet weak var rating: CosmosView!
     @IBOutlet weak var userReview: UITextView!
     @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var imageButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         userReview.textContainer.maximumNumberOfLines = 3
         userReview.textContainer.lineBreakMode = .byWordWrapping
+        userReview.layer.borderWidth = 1.0
+        userReview.layer.borderColor = UIColor.gray.cgColor
+        userReview.layer.cornerRadius = 8
+        
         let keyboardDoneButtonView = UIToolbar.init()
         keyboardDoneButtonView.sizeToFit()
         let emptyButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
@@ -40,6 +43,23 @@ class WriteReviewTableViewController: UITableViewController, UITextViewDelegate,
         userReview.resignFirstResponder()
     }
     
+    @IBAction func TapImage(_ sender: UITapGestureRecognizer) {
+        // Hide the keyboard.
+        userReview.resignFirstResponder()
+        
+        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
+        let imagePickerController = UIImagePickerController()
+        
+        // Only allow photos to be picked, not taken.
+        imagePickerController.sourceType = .photoLibrary
+        
+        // Make sure ViewController is notified when the user picks an image.
+        imagePickerController.delegate = self
+        
+        present(imagePickerController, animated: true, completion: nil)
+        
+    }
+
     func makeReview() -> Review? {
         let review = Review()
 
@@ -54,25 +74,13 @@ class WriteReviewTableViewController: UITableViewController, UITextViewDelegate,
             review.image = temp
         }
         
+        review.id = (dataCenter.user?.id)!
+        review.name = (dataCenter.user?.name)!
         review.rate = rating.rating
         
         return review
     }
-    @IBAction func pickImage(_ sender: Any) {
-        // Hide the keyboard.
-        userReview.resignFirstResponder()
-        
-        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
-        let imagePickerController = UIImagePickerController()
-        
-        // Only allow photos to be picked, not taken.
-        imagePickerController.sourceType = .photoLibrary
-        
-        // Make sure ViewController is notified when the user picks an image.
-        imagePickerController.delegate = self
-        
-        present(imagePickerController, animated: true, completion: nil)
-    }
+
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         // Dismiss the picker if the user canceled.
