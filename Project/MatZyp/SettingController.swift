@@ -16,7 +16,6 @@ import UIKit
 
 class SettingController: UITableViewController {
     
-    
     @IBOutlet weak var check1: UISwitch!
     @IBOutlet weak var check2: UISwitch!
     @IBOutlet weak var check3: UISwitch!

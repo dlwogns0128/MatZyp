@@ -8,20 +8,26 @@
 
 import UIKit
 
-class ReviewTableViewController: UITableViewController {
+class ReviewTableViewController: UITableViewController, UIGestureRecognizerDelegate {
 
     var matzyp:Matzyp?
     var setting:Setting?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let gesture = UITapGestureRecognizer(target: self, action: #selector(ReviewTableViewController.TapImage(_:)))
+//        gesture.delegate = self
+//        self.view.addGestureRecognizer(gesture)
         
     }
     
     //Make button
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
+        if (dataCenter.user != nil) {
+            
         self.parent?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Edit_"), style: .plain, target: self, action: #selector(ReviewTableViewController.writeButtonTapped(_rightBarButtonItem:)))
+        }
     }
     //Delete button
     override func viewWillDisappear(_ animated: Bool) {
@@ -34,6 +40,12 @@ class ReviewTableViewController: UITableViewController {
             self.tableView.contentInset = UIEdgeInsets(top: y,left: 0,bottom: 0,right: 0)
         }
     }
+//    func TapImage(_ sender: UITapGestureRecognizer) {
+//        print("tap")
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let secondViewController = storyboard.instantiateViewController(withIdentifier: "detailImage")
+//        self.present(secondViewController, animated: true, completion: nil)
+//    }
     
     func writeButtonTapped(_rightBarButtonItem: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -74,7 +86,7 @@ class ReviewTableViewController: UITableViewController {
             return cell
         }
         
-//        cell.userName
+        cell.userName.text = review.name
         cell.userReview.text = review.text.text
         cell.date.text = review.date.description
         cell.foodImage.image = review.image

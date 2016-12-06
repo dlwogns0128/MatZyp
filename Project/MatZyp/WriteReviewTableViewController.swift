@@ -54,6 +54,8 @@ class WriteReviewTableViewController: UITableViewController, UITextViewDelegate,
             review.image = temp
         }
         
+        review.id = (dataCenter.user?.id)!
+        review.name = (dataCenter.user?.name)!
         review.rate = rating.rating
         
         return review
