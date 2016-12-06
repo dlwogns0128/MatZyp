@@ -119,14 +119,16 @@ class Menu {
 }
 
 class Review {
-    var Id: String
+    var id: String
+    var name: String
     var text: UITextView
     var date: String
     var rate: Double
     var image: UIImage?
     
     init() {
-        self.Id = "NoName"
+        self.id = ""
+        self.name = ""
         self.text = UITextView()
         let format = DateFormatter()
         format.locale = NSLocale(localeIdentifier: "ko_kr") as Locale!
@@ -139,10 +141,12 @@ class Review {
 
 class User {
     var id: String
+    var name: String
     var profileImage: UIImage?
     
     init() {
         self.id = ""
+        self.name = ""
     }
 }
 let dataCenter:DataCenter = DataCenter()
@@ -153,6 +157,7 @@ class DataCenter {
     let alchone:Matzyp
     let daedosikttang:Matzyp
     let gwangMoon:Matzyp
+    var user: User?
     init() {
         let hanyangChone_menu1 = Menu(name: [.korean:"고추장불고기",.english:"Spicy bulgogi",.chinese:"辣椒酱烤肉"], price: 5500, img: UIImage(named: "gochu"))
         let hanyangChone_menu2 = Menu(name: [.korean:"순두부찌개",.english:"Soft tofu stew",.chinese:"豆腐脑"], price: 5000, img: UIImage(named: "soon"))
