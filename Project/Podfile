@@ -4,4 +4,5 @@ target 'MatZyp' do
 pod 'GooglePlaces'
 pod 'GooglePlacePicker'
 pod 'GoogleMaps'
+pod 'Polyglot’, ‘~> 0.5’
 end

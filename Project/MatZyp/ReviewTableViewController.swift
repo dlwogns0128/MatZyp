@@ -15,10 +15,7 @@ class ReviewTableViewController: UITableViewController, UIGestureRecognizerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let gesture = UITapGestureRecognizer(target: self, action: #selector(ReviewTableViewController.TapImage(_:)))
-//        gesture.delegate = self
-//        self.view.addGestureRecognizer(gesture)
-        
+
     }
     
     //Make button
@@ -40,13 +37,22 @@ class ReviewTableViewController: UITableViewController, UIGestureRecognizerDeleg
             self.tableView.contentInset = UIEdgeInsets(top: y,left: 0,bottom: 0,right: 0)
         }
     }
-//    func TapImage(_ sender: UITapGestureRecognizer) {
-//        print("tap")
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let secondViewController = storyboard.instantiateViewController(withIdentifier: "detailImage")
-//        self.present(secondViewController, animated: true, completion: nil)
-//    }
     
+    func Tapimage(_ sender: UITapGestureRecognizer) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondViewController = storyboard.instantiateViewController(withIdentifier: "detailImage") as! DetailImageViewController
+        let tapLocation = sender.location(in: self.tableView)
+        
+        //using the tapLocation, we retrieve the corresponding indexPath
+        let indexPath = self.tableView.indexPathForRow(at: tapLocation)
+        
+        //we could even get the cell from the index, too
+        let cell = self.tableView.cellForRow(at: indexPath!) as! ReviewTableViewCell
+        secondViewController.image = cell.foodImage.image
+        self.present(secondViewController, animated: true, completion: nil)
+        
+    }
     func writeButtonTapped(_rightBarButtonItem: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let secondViewController = storyboard.instantiateViewController(withIdentifier: "writeReview") as! UINavigationController
@@ -84,6 +90,12 @@ class ReviewTableViewController: UITableViewController, UIGestureRecognizerDeleg
 
         guard let review = matzyp?.reviews[indexPath.row] else {
             return cell
+        }
+        
+        if (review.image != #imageLiteral(resourceName: "no_image_selected")) {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.Tapimage(_:)))
+            tap.delegate = self
+            cell.foodImage.addGestureRecognizer(tap)
         }
         
         cell.userName.text = review.name

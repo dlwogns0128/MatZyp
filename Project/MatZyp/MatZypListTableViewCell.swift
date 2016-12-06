@@ -16,6 +16,7 @@ class MatZypListTableViewCell: UITableViewCell {
     @IBOutlet weak var TimeLabel: UILabel!
     @IBOutlet weak var rating: CosmosView!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

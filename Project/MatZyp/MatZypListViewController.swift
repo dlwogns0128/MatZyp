@@ -13,6 +13,7 @@ class MatZypListViewController: UITableViewController, UIViewControllerPreviewin
     
     var location:Location?
     var setting:Setting?
+//    let translator = Polyglot(clientId: "MatZyp", clientSecret: "dlwognsqkrruddnjsrkdwnsah")
     
     
     override func viewDidLoad() {
