@@ -40,6 +40,7 @@
 		B2D31FE91DE7434E000513B4 /* customSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D31FE81DE7434E000513B4 /* customSegmentedControl.swift */; };
 		B2D31FEB1DE767FE000513B4 /* ThirdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D31FEA1DE767FE000513B4 /* ThirdCell.swift */; };
 		B2DF22321DF44E96001308DA /* rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF22311DF44E96001308DA /* rating.swift */; };
+		B2E3E0B71DF6AFA400840F65 /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E3E0B61DF6AFA400840F65 /* DetailImageViewController.swift */; };
 		CE16A1171DE0663E00DED5E7 /* GMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A1161DE0663E00DED5E7 /* GMapViewController.swift */; };
 		CEADF87C1DE827940015FC0A /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEADF87B1DE827940015FC0A /* SearchResultController.swift */; };
 		CEB7CBE71DE065F2000D8A2E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CEB7CBE61DE065F2000D8A2E /* Podfile */; };
@@ -85,6 +86,7 @@
 		B2D31FE81DE7434E000513B4 /* customSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customSegmentedControl.swift; sourceTree = "<group>"; };
 		B2D31FEA1DE767FE000513B4 /* ThirdCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdCell.swift; sourceTree = "<group>"; };
 		B2DF22311DF44E96001308DA /* rating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rating.swift; sourceTree = "<group>"; };
+		B2E3E0B61DF6AFA400840F65 /* DetailImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailImageViewController.swift; sourceTree = "<group>"; };
 		CE16A1161DE0663E00DED5E7 /* GMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMapViewController.swift; sourceTree = "<group>"; };
 		CEADF87B1DE827940015FC0A /* SearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResultController.swift; path = ../SearchResultController.swift; sourceTree = "<group>"; };
 		CEB7CBE61DE065F2000D8A2E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -180,6 +182,7 @@
 				B2D31FE21DE739E9000513B4 /* WriteReviewTableViewController.swift */,
 				B20AF2B31DF2B02E00B4730F /* ReviewTableViewCell.swift */,
 				B2DF22311DF44E96001308DA /* rating.swift */,
+				B2E3E0B61DF6AFA400840F65 /* DetailImageViewController.swift */,
 			);
 			name = ReviewView;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				B20AF2B41DF2B02E00B4730F /* ReviewTableViewCell.swift in Sources */,
 				B241D1491DE45227008348FF /* SegViewController.swift in Sources */,
 				36CE63EE1DD6F06000F73C7E /* SettingController.swift in Sources */,
+				B2E3E0B71DF6AFA400840F65 /* DetailImageViewController.swift in Sources */,
 				B2BA89A81DD881EB00FC0C13 /* SecondCell.swift in Sources */,
 				B2BA89A61DD86B7000FC0C13 /* InfoListViewController.swift in Sources */,
 				B2BA89AA1DD883EC00FC0C13 /* FourthCell.swift in Sources */,
