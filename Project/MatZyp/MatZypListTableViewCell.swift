@@ -10,6 +10,7 @@ import UIKit
 
 class MatZypListTableViewCell: UITableViewCell {
 
+    //MARK: Properties
     @IBOutlet weak var reviewCount: UILabel!
     @IBOutlet weak var MainImageView: UIImageView!
     @IBOutlet weak var NameLabel: UILabel!

@@ -41,6 +41,7 @@
 		B2D31FEB1DE767FE000513B4 /* ThirdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D31FEA1DE767FE000513B4 /* ThirdCell.swift */; };
 		B2DF22321DF44E96001308DA /* rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF22311DF44E96001308DA /* rating.swift */; };
 		B2E3E0B71DF6AFA400840F65 /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E3E0B61DF6AFA400840F65 /* DetailImageViewController.swift */; };
+		B2E3E0E11DF7DB1A00840F65 /* ROGoogleTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E3E0E01DF7DB1A00840F65 /* ROGoogleTranslate.swift */; };
 		CE16A1171DE0663E00DED5E7 /* GMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16A1161DE0663E00DED5E7 /* GMapViewController.swift */; };
 		CEADF87C1DE827940015FC0A /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEADF87B1DE827940015FC0A /* SearchResultController.swift */; };
 		CEB7CBE71DE065F2000D8A2E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CEB7CBE61DE065F2000D8A2E /* Podfile */; };
@@ -87,6 +88,7 @@
 		B2D31FEA1DE767FE000513B4 /* ThirdCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdCell.swift; sourceTree = "<group>"; };
 		B2DF22311DF44E96001308DA /* rating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rating.swift; sourceTree = "<group>"; };
 		B2E3E0B61DF6AFA400840F65 /* DetailImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailImageViewController.swift; sourceTree = "<group>"; };
+		B2E3E0E01DF7DB1A00840F65 /* ROGoogleTranslate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROGoogleTranslate.swift; sourceTree = "<group>"; };
 		CE16A1161DE0663E00DED5E7 /* GMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMapViewController.swift; sourceTree = "<group>"; };
 		CEADF87B1DE827940015FC0A /* SearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResultController.swift; path = ../SearchResultController.swift; sourceTree = "<group>"; };
 		CEB7CBE61DE065F2000D8A2E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -114,6 +116,7 @@
 		36CE29661DC869040087F8F3 = {
 			isa = PBXGroup;
 			children = (
+				B2E3E0E01DF7DB1A00840F65 /* ROGoogleTranslate.swift */,
 				CEB7CBE61DE065F2000D8A2E /* Podfile */,
 				36CE29711DC869040087F8F3 /* MatZyp */,
 				36CE29701DC869040087F8F3 /* Products */,
@@ -399,6 +402,7 @@
 				369A7E7C1DD5ACE3009FCB39 /* LanguageModalViewController.swift in Sources */,
 				B2BA89AC1DD883F800FC0C13 /* FifthCell.swift in Sources */,
 				B2BA89AE1DD8840200FC0C13 /* SixthCell.swift in Sources */,
+				B2E3E0E11DF7DB1A00840F65 /* ROGoogleTranslate.swift in Sources */,
 				36CE29731DC869040087F8F3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
