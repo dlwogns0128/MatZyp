@@ -199,6 +199,11 @@ class GMapViewController: UIViewController, GMSMapViewDelegate, UISearchBarDeleg
         
         self.resultArray.removeAll()
         gmsFetcher?.sourceTextHasChanged(searchText)
+        for m in markers {
+            if m.title?.contains(searchText) == true{
+                self.resultArray.append(m.title!)
+            }
+        }
         
         
     }
