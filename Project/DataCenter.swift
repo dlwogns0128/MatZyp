@@ -121,7 +121,7 @@ class Menu {
 class Review {
     var id: String
     var name: String
-    var text: UITextView
+    var text: [Language : String]
     var date: String
     var rate: Double
     var image: UIImage?
@@ -129,7 +129,7 @@ class Review {
     init() {
         self.id = ""
         self.name = ""
-        self.text = UITextView()
+        self.text = [ : ]
         let format = DateFormatter()
         format.locale = NSLocale(localeIdentifier: "ko_kr") as Locale!
         format.timeZone = NSTimeZone(name: "KST") as TimeZone!
