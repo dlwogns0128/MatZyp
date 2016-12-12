@@ -2068,7 +2068,7 @@
 
 	.main {
 		position: relative;
-		margin: 0;
+		margin-bottom: 3em;
 	}
 
 		.main > header {
@@ -2648,7 +2648,7 @@ body.is-loading #banner:after {
     transition: transform 0.5s ease, opacity 0.5s ease;
     font-size: 1.5em;
     font-weight: 400;
-    line-height: 1.2em;
+    /*line-height: 1.2em;*/
     /*padding: 0em 0.35em;*/
     margin-bottom: 0;
     display: inline-block;
@@ -2670,9 +2670,38 @@ body.is-loading #banner:after {
  }*/
 
 #first h3:after {
-				bottom: 0;
-                right: 0;
+    bottom: 0;
+    right: 0;
 }
-#first p{
+#first p, #third p{
     font-size:0.8em;
+}
+#last header{
+    text-align:center;
+}
+#last header h2{
+    transform: scale(1);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    font-size: 1.5em;
+    font-weight: 400;
+    
+    /*padding: 0em 0.35em;*/
+    text-align:center;
+    margin-bottom: 0;
+    display: inline-block;
+}
+#last h2:after{
+    transition: width 0.85s ease;
+    transition-delay: 0.25s;
+    
+    background: #fff;
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+
+}
+#last h2:after{
+    bottom:0;
+    right:0;
 }
