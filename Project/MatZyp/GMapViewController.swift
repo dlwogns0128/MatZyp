@@ -156,7 +156,42 @@ class GMapViewController: UIViewController, GMSMapViewDelegate, UISearchBarDeleg
         sogumiMarker.map = myMap
         sogumiMarker.userData = [3,2]
         
-        markers = [alchoneMarker, hanyangChoneMarker, daedoSikttangMarker, gwangMoonMarker, robotgimbapMarker, sonyeonsanhoiMarker, daegalzipMarker, samsungredMarker, sinanchonMarker, surakioMarker, terminiMarker, chammannaMarker, haemateaMarker, bomgasMarker, sogumiMarker]
+        let hamnamMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: dataCenter.hamnam.latitude, longitude: dataCenter.hamnam.longitude))
+        hamnamMarker.title = "함남곱창"
+        hamnamMarker.map = myMap
+        hamnamMarker.userData = [4,0]
+        
+        let northseaMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: dataCenter.northsea.latitude, longitude: dataCenter.northsea.longitude))
+        northseaMarker.title = "북해빙수"
+        northseaMarker.map = myMap
+        northseaMarker.userData = [4,1]
+        
+        let cryroadMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: dataCenter.cryroad.latitude, longitude: dataCenter.cryroad.longitude))
+        cryroadMarker.title = "크라이로드노이"
+        cryroadMarker.map = myMap
+        cryroadMarker.userData = [4,2]
+        
+        let redsunMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: dataCenter.redsun.latitude, longitude: dataCenter.redsun.longitude))
+        redsunMarker.title = "레드썬"
+        redsunMarker.map = myMap
+        redsunMarker.userData = [5,0]
+        
+        let mpizzaMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: dataCenter.mpizza.latitude, longitude: dataCenter.mpizza.longitude))
+        mpizzaMarker.title = "명동피자"
+        mpizzaMarker.map = myMap
+        mpizzaMarker.userData = [5,1]
+        
+        let ioknyeoMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: dataCenter.ioknyeo.latitude, longitude: dataCenter.ioknyeo.longitude))
+        ioknyeoMarker.title = "명동피자"
+        ioknyeoMarker.map = myMap
+        ioknyeoMarker.userData = [6,0]
+        
+        let tianpanMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: dataCenter.tianpan.latitude, longitude: dataCenter.tianpan.longitude))
+        tianpanMarker.title = "명동피자"
+        tianpanMarker.map = myMap
+        tianpanMarker.userData = [6,1]
+        
+        markers = [alchoneMarker, hanyangChoneMarker, daedoSikttangMarker, gwangMoonMarker, robotgimbapMarker, sonyeonsanhoiMarker, daegalzipMarker, samsungredMarker, sinanchonMarker, surakioMarker, terminiMarker, chammannaMarker, haemateaMarker, bomgasMarker, sogumiMarker, hamnamMarker, northseaMarker, cryroadMarker, redsunMarker, mpizzaMarker, ioknyeoMarker, tianpanMarker]
     }
     
     override func viewDidAppear(_ animated: Bool) {
